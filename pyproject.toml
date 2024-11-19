@@ -32,8 +32,8 @@ homepage = "https://github.com/tatyam-prime/acl-cpp-python"
 repository = "https://github.com/tatyam-prime/acl-cpp-python"
 
 [tool.cibuildwheel]
-build = ["cp3{11,12,13}-*", "pp3{9,10}-*"]
-archs = ["auto"]
+build = ["cp3{9,13}-*", "pp3{9,10}-*"]
+archs = ["auto64"]
 test-requires = "pytest"
 test-command = "pytest {project}/tests"
 
