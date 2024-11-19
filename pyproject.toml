@@ -19,11 +19,6 @@ classifiers = [
   "Development Status :: 3 - Alpha",
   "Programming Language :: C++",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
   "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
 ]
 
@@ -37,7 +32,10 @@ homepage = "https://github.com/tatyam-prime/acl-cpp-python"
 repository = "https://github.com/tatyam-prime/acl-cpp-python"
 
 [tool.cibuildwheel]
-archs = ["auto64"]          # limit to 64bits builds
+build = ["cp3{11,12,13}-*", "pp3{9,10}-*"]
+archs = ["auto"]
+test-requires = "pytest"
+test-command = "pytest {project}/tests"
 
 [tool.cibuildwheel.macos.environment]
 MACOSX_DEPLOYMENT_TARGET = "15.0"

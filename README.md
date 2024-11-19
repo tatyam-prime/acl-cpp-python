@@ -1,5 +1,7 @@
 # acl-cpp-python
 
+English | [日本語](https://github.com/tatyam-prime/acl-cpp-python/blob/main/README_ja.md)
+
 `acl-cpp-python` is a Python binding of the [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) implemented in C++ using [nanobind](https://github.com/wjakob/nanobind).
 
 ## Installation
