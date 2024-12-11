@@ -23,7 +23,7 @@ print(*b)  # 1 2 1
 
 ## 注意点
 
-- `segtree`, `lazysegtree` は現状実装されていません。これらは型と演算の抽象化をしており、Python で演算を定義すると高速化が期待できないためです。
+- `segtree`, `lazysegtree`, `modint` は高速化が期待できないため、現状実装されていません。
     - <https://github.com/shakayami/ACL-for-python> や <https://github.com/not522/ac-library-python> などの Python で書かれたセグメント木を使用してください。
 - 整数の大きさに注意してください。[AC Library のドキュメント](https://atcoder.github.io/ac-library/production/document_ja/) を読み、`int` 型が要求されている関数には、32 bit 符号付き整数の範囲に収まる値を、`long long` 型が要求されている関数には、64 bit 符号付き整数の範囲に収まる値を渡してください。範囲外の値を入れると、`TypeError` が発生します。
 - オーバーフローに注意してください。多くの整数は 64 bit 符号付き整数として実装されているため、この範囲を超える計算を行うと、オーバーフローが発生し、結果が正しくなくなります。
@@ -37,7 +37,7 @@ C++ 版との差異を以下に示します。
 
 #### `acl_cpp.fenwicktree`
 
-`T = long long` とした class `fenwicktree.fenwick_tree` と、`T = modint` とした class `fenwicktree.fenwick_tree_modint` が存在します。
+`T = long long` とした class `fenwicktree.fenwick_tree` が存在します。
 
 #### `acl_cpp.segtree`
 
@@ -75,33 +75,28 @@ C++ 版との差異を以下に示します。
 
 以下の関数が存在します。
 
-- `convolution.convolution(a: list[modint.modint998244353], b: list[modint.modint998244353]) -> list[modint.modint998244353]:`
-- `convolution.convolution(a: list[modint.modint], b: list[modint.modint]) -> list[modint.modint]:`
-    - C++ 版に存在しない modint の convolution を実装しました。
-    - 「`(mod - 1) % (2 ** c) == 0` かつ `len(a) + len(b) - 1 <= 2 ** c` となる整数 `c` が存在する」の条件 (mod が NTT-friendly かどうか) に注意してください。
-- `convolution.convolution(a: list[long long], b: list[long long], mod: int) -> list[long long]:`
-    - 整数の mod を convolution するときは、第 3 引数に `mod` を入れてください。
+- `convolution.convolution998244353(a: list[int], b: list[int]) -> list[int]:`
+    - `a`, `b` の各要素は $0$ 以上 $998244353$ 未満にしてください。
+- `convolution.convolution(a: list[int], b: list[int], mod: int) -> list[int]:`
+    - C++ 版に存在しない dynamic_modint の convolution を実装しました。
+    - `a`, `b` の各要素は $0$ 以上 `mod` 未満にしてください。
     - 「`(mod - 1) % (2 ** c) == 0` かつ `len(a) + len(b) - 1 <= 2 ** c` となる整数 `c` が存在する」の条件 (mod が NTT-friendly かどうか) に注意してください。
 - `convolution.convolution_ll(a: list[long long], b: list[long long]) -> list[long long]:`
+
 
 #### `acl_cpp.convolution.internal`
 
 以下の関数が存在します。FPS (形式的冪級数) の高速化に有用です。  
 以下は C++ 版と異なり、引数を変更せず値を返します。
 
-- `convolution.internal.butterfly(a: list[modint.modint998244353]) -> list[modint.modint998244353]:`
-- `convolution.internal.butterfly(a: list[modint.modint]) -> list[modint.modint]:`
-- `convolution.internal.butterfly_inv(a: list[modint.modint998244353]) -> list[modint.modint998244353]:`
-- `convolution.internal.butterfly_inv(a: list[modint.modint]) -> list[modint.modint]:`
+- `convolution.internal.butterfly998244353(a: list[int]) -> list[int]:`
+- `convolution.internal.butterfly(a: list[int], mod: int) -> list[int]:`
+- `convolution.internal.butterfly_inv998244353(a: list[int]) -> list[int]:`
+- `convolution.internal.butterfly_inv(a: list[int], mod: int) -> list[int]:`
 
 #### `acl_cpp.modint`
 
-`modint.modint998244353`, `modint.modint1000000007`, `modint.modint` が存在します。
-`static_modint`, `dynamic_modint` は存在しません。  
-TODO: `dynamic_modint` をたくさん作れるようにする
-
-`modint(10) ** 10` の記法に対応しました。  
-`str(modint(10))` で値を直接 `str` に変換できます。
+存在しません。
 
 ### グラフ
 

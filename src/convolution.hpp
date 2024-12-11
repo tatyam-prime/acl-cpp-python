@@ -319,12 +319,6 @@ std::vector<T> convolution(const std::vector<T>& a, const std::vector<T>& b) {
     return c;
 }
 
-std::vector<long long> convolution_dynamic(const std::vector<long long>& a, const std::vector<long long>& b, int mod) {
-    using mint = dynamic_modint<1>;
-    mint::set_mod(mod);
-    return convolution<mint>(a, b);
-}
-
 std::vector<long long> convolution_ll(const std::vector<long long>& a,
                                       const std::vector<long long>& b) {
     int n = int(a.size()), m = int(b.size());
