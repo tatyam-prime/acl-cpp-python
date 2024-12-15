@@ -13,11 +13,10 @@ pip install acl-cpp-python
 ## Example
 
 ```python
-from acl_cpp.modint import modint998244353 as mint
-from acl_cpp.convolution import convolution
+from acl_cpp.convolution import convolution998244353
 
-a = [mint(1), mint(1)]
-b = convolution(a, a)
+a = [1, 1]
+b = convolution998244353(a, a)
 print(*b)  # 1 2 1
 ```
 
