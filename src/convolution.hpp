@@ -21,7 +21,6 @@ template<int m>
 struct fft_info<static_modint<m>> {
     using mint = static_modint<m>;
     static constexpr int rank2 = countr_zero_constexpr(mint::mod() - 1);
-    static constexpr int g = internal::primitive_root<mint::mod()>;
     std::array<mint, rank2 + 1> root;   // root[i]^(2^i) == 1
     std::array<mint, rank2 + 1> iroot;  // root[i] * iroot[i] == 1
 
@@ -32,6 +31,7 @@ struct fft_info<static_modint<m>> {
     std::array<mint, std::max(0, rank2 - 3 + 1)> irate3;
 
     fft_info() {
+        constexpr int g = internal::primitive_root<mint::mod()>;
         root[rank2] = mint(g).pow((mint::mod() - 1) >> rank2);
         iroot[rank2] = root[rank2].inv();
         for (int i = rank2 - 1; i >= 0; i--) {
@@ -65,7 +65,6 @@ struct fft_info<dynamic_modint<id>> {
     using mint = dynamic_modint<id>;
     int mod = mint::mod();
     int rank2 = countr_zero(mod - 1);
-    int g = internal::primitive_root_constexpr(mod);
     std::vector<mint> root;   // root[i]^(2^i) == 1
     std::vector<mint> iroot;  // root[i] * iroot[i] == 1
 
@@ -81,6 +80,8 @@ struct fft_info<dynamic_modint<id>> {
                  irate2(std::max(0, rank2 - 2 + 1)),
                  rate3(std::max(0, rank2 - 3 + 1)),
                  irate3(std::max(0, rank2 - 3 + 1)) {
+        assert(is_prime_constexpr(mod));
+        int g = internal::primitive_root_constexpr(mod);
         root[rank2] = mint(g).pow((mod - 1) >> rank2);
         iroot[rank2] = root[rank2].inv();
         for (int i = rank2 - 1; i >= 0; i--) {
