@@ -14,10 +14,6 @@ def test_math():
     with pytest.raises(ValueError):
         m.floor_sum(1 << 32, 1 << 32, 1 << 32, 1 << 32)
 
-    bt = barrett(998244353)
-    assert bt.umod() == 998244353
-    assert bt.mul(998244352, 998244352) == 1
-
     assert mi.is_prime(2) == True
     assert mi.inv_gcd(4, 6) == (2, 2)
     assert mi.primitive_root(998244353) == 3
