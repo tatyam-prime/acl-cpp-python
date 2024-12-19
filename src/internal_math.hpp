@@ -2,10 +2,10 @@
 #define ATCODER_INTERNAL_MATH_HPP 1
 
 #include <utility>
-
 #ifdef _MSC_VER
 #include <intrin.h>
 #endif
+#include "nanobind_assert.hpp"
 
 namespace atcoder {
 
@@ -142,6 +142,7 @@ constexpr std::pair<long long, long long> inv_gcd(long long a, long long b) {
 // @param m must be prime
 // @return primitive root (and minimum in now)
 constexpr int primitive_root_constexpr(int m) {
+    assert(is_prime_constexpr(m));
     if (m == 2) return 1;
     if (m == 167772161) return 3;
     if (m == 469762049) return 3;

@@ -15,5 +15,4 @@ def test_math():
         m.floor_sum(1 << 32, 1 << 32, 1 << 32, 1 << 32)
 
     assert mi.is_prime(2) == True
-    assert mi.inv_gcd(4, 6) == (2, 2)
     assert mi.primitive_root(998244353) == 3

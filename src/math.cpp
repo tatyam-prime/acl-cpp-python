@@ -14,6 +14,5 @@ NB_MODULE(math, m) {
     using namespace internal;
     auto internal = m.def_submodule("internal");
     internal.def("is_prime", is_prime_constexpr);
-    internal.def("inv_gcd", inv_gcd);
     internal.def("primitive_root", primitive_root_constexpr);
 }
