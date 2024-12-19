@@ -15,3 +15,5 @@ def test_math():
 
     assert mi.is_prime(2) == True
     assert mi.primitive_root(998244353) == 3
+    with pytest.raises(ValueError):
+        mi.primitive_root(1)

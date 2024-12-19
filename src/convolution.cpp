@@ -14,6 +14,7 @@ std::vector<modint> butterfly_dynamic(std::vector<modint> a, int mod) {
     if (a.empty()) return a;
     assert((a.size() & (a.size() - 1)) == 0);
     assert((mod - 1) % a.size() == 0);
+    assert(internal::is_prime_constexpr(mod));
     modint::set_mod(mod);
     butterfly(a);
     return a;
@@ -29,6 +30,7 @@ std::vector<modint> butterfly_inv_dynamic(std::vector<modint> a, int mod) {
     if (a.empty()) return a;
     assert((a.size() & (a.size() - 1)) == 0);
     assert((mod - 1) % a.size() == 0);
+    assert(internal::is_prime_constexpr(mod));
     modint::set_mod(mod);
     butterfly_inv(a);
     return a;
@@ -36,6 +38,7 @@ std::vector<modint> butterfly_inv_dynamic(std::vector<modint> a, int mod) {
 auto convolution998244353 =
     static_cast<std::vector<modint998244353> (*)(std::vector<modint998244353>&&, std::vector<modint998244353>&&)>(convolution);
 std::vector<modint> convolution_dynamic(std::vector<modint>&& a, std::vector<modint>&& b, int mod) {
+    assert(internal::is_prime_constexpr(mod));
     modint::set_mod(mod);
     return convolution(std::move(a), std::move(b));
 }

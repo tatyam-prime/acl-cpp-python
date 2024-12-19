@@ -17,6 +17,9 @@ def test_convolution():
     with pytest.raises(ValueError):
         a = [0] * (2 ** 23 + 1)
         c.convolution_ll(a, a)
+    with pytest.raises(ValueError):
+        a = [1, 1]
+        c.convolution(a, a, 1)
 
 def test_convolution_internal():
     a = [0, 1, 0, 0]
@@ -27,3 +30,29 @@ def test_convolution_internal():
     assert ci.butterfly(a, 998244353) == b
     assert ci.butterfly_inv998244353(b) == c
     assert ci.butterfly_inv(b, 998244353) == c
+
+    a = [0] * 3
+    with pytest.raises(ValueError):
+        ci.butterfly998244353(a)
+    with pytest.raises(ValueError):
+        ci.butterfly(a, 998244353)
+    with pytest.raises(ValueError):
+        ci.butterfly_inv998244353(a)
+    with pytest.raises(ValueError):
+        ci.butterfly_inv(a, 998244353)
+
+    a = [0]
+    with pytest.raises(ValueError):
+        ci.butterfly(a, 1)
+    with pytest.raises(ValueError):
+        ci.butterfly_inv(a, 1)
+    
+    a = [0] * (2 ** 24)
+    with pytest.raises(ValueError):
+        ci.butterfly998244353(a)
+    with pytest.raises(ValueError):
+        ci.butterfly(a, 998244353)
+    with pytest.raises(ValueError):
+        ci.butterfly_inv998244353(a)
+    with pytest.raises(ValueError):
+        ci.butterfly_inv(a, 998244353)
