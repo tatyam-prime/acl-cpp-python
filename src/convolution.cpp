@@ -4,19 +4,31 @@
 
 using namespace atcoder;
 std::vector<modint998244353> butterfly998244353(std::vector<modint998244353> a) {
+    if (a.empty()) return a;
+    assert((a.size() & (a.size() - 1)) == 0);
+    assert((modint998244353::mod() - 1) % a.size() == 0);
     butterfly(a);
     return a;
 }
 std::vector<modint> butterfly_dynamic(std::vector<modint> a, int mod) {
+    if (a.empty()) return a;
+    assert((a.size() & (a.size() - 1)) == 0);
+    assert((mod - 1) % a.size() == 0);
     modint::set_mod(mod);
     butterfly(a);
     return a;
 }
 std::vector<modint998244353> butterfly_inv998244353(std::vector<modint998244353> a) {
+    if (a.empty()) return a;
+    assert((a.size() & (a.size() - 1)) == 0);
+    assert((modint998244353::mod() - 1) % a.size() == 0);
     butterfly_inv(a);
     return a;
 }
 std::vector<modint> butterfly_inv_dynamic(std::vector<modint> a, int mod) {
+    if (a.empty()) return a;
+    assert((a.size() & (a.size() - 1)) == 0);
+    assert((mod - 1) % a.size() == 0);
     modint::set_mod(mod);
     butterfly_inv(a);
     return a;
