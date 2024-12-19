@@ -23,7 +23,7 @@ print(*b)  # 1 2 1
 ## Notes
 
 - `segtree`, `lazysegtree`, and `modint` are not implemented as they are unlikely to offer performance improvements.
-- Be mindful of integer size. Refer to the [AC Library documentation](https://atcoder.github.io/ac-library/production/document_en/). Functions requiring `int` must receive values within the range of 32-bit signed integers, and functions requiring `long long` must receive values within the range of 64-bit signed integers. Passing values outside these ranges will raise a `TypeError`.
+- Be mindful of integer size. Functions requiring `int` must receive values within the range of 32-bit signed integers, and functions requiring `long long` must receive values within the range of 64-bit signed integers. Passing values outside these ranges will raise a `TypeError`.
 - Watch out for overflow. Many integers are implemented as 64-bit signed integers. Calculations exceeding this range will result in overflow and produce incorrect results.
 
 ## Documentation
