@@ -1,6 +1,5 @@
 import acl_cpp.math as m
 import acl_cpp.math.internal as mi
-from acl_cpp.math.internal import barrett
 import pytest
 
 def test_math():
