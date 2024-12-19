@@ -1,8 +1,8 @@
 # acl-cpp-python
 
-English | [日本語](https://github.com/tatyam-prime/acl-cpp-python/blob/main/README_ja.md)
+[English](https://github.com/tatyam-prime/acl-cpp-python/blob/main/README.md) | [日本語](https://github.com/tatyam-prime/acl-cpp-python/blob/main/README_ja.md)
 
-`acl-cpp-python` is a Python binding of the [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) implemented in C++ using [nanobind](https://github.com/wjakob/nanobind).
+`acl-cpp-python` is a Python binding for the [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) implemented in C++, using [nanobind](https://github.com/wjakob/nanobind).
 
 ## Installation
 
@@ -10,7 +10,7 @@ English | [日本語](https://github.com/tatyam-prime/acl-cpp-python/blob/main/R
 pip install acl-cpp-python
 ```
 
-## Example
+## Usage
 
 ```python
 from acl_cpp.convolution import convolution998244353
@@ -22,21 +22,20 @@ print(*b)  # 1 2 1
 
 ## Notes
 
-- `segtree` and `lazysegtree` are not currently implemented. These structures abstract types and operations, and performance improvement is not expected if implemented in Python.
-    - Please use Python implementations of segment trees, such as <https://github.com/shakayami/ACL-for-python> or <https://github.com/not522/ac-library-python>.
-- Be mindful of integer sizes. Refer to the [AC Library documentation](https://atcoder.github.io/ac-library/production/document_ja/) and ensure that for functions requiring the `int` type, the input values fall within the range of 32-bit signed integers, and for those requiring the `long long` type, the input values fall within the range of 64-bit signed integers. A `TypeError` will occur for out-of-range values.
-- Be cautious of overflow. Most integers are implemented as 64-bit signed integers, and calculations exceeding this range may result in overflow and incorrect results.
+- `segtree`, `lazysegtree`, and `modint` are not implemented as they are unlikely to offer performance improvements.
+- Be mindful of integer size. Refer to the [AC Library documentation](https://atcoder.github.io/ac-library/production/document_en/). Functions requiring `int` must receive values within the range of 32-bit signed integers, and functions requiring `long long` must receive values within the range of 64-bit signed integers. Passing values outside these ranges will raise a `TypeError`.
+- Watch out for overflow. Many integers are implemented as 64-bit signed integers. Calculations exceeding this range will result in overflow and produce incorrect results.
 
 ## Documentation
 
-Refer to the [AC Library documentation](https://atcoder.github.io/ac-library/production/document_ja/).  
-Differences from the C++ version are outlined below.
+Refer to the [AC Library documentation](https://atcoder.github.io/ac-library/production/document_en/).  
+The differences from the C++ version are outlined below.
 
 ### Data Structures
 
 #### `acl_cpp.fenwicktree`
 
-Includes the class `fenwicktree.fenwick_tree` with `T = long long` and `fenwicktree.fenwick_tree_modint` with `T = modint`.
+Contains a class `fenwicktree.fenwick_tree` where `T = long long`.
 
 #### `acl_cpp.segtree`
 
@@ -48,7 +47,7 @@ Not available.
 
 #### `acl_cpp.string`
 
-Includes a string version and one with `T = long long`.
+Includes implementations for `str` and `T = long long`.
 
 ### Mathematics
 
@@ -56,72 +55,80 @@ Includes a string version and one with `T = long long`.
 
 - `pow_mod` is not available. Use `pow(x, n, m)` instead.
 - `inv_mod` is not available. Use `pow(x, -1, m)` instead.
+- `crt(r: list[long long], m: list[long long]) -> (long long, long long)` is available.
+- `floor_sum(n: long long, m: long long, a: long long, b: long long) -> long long` is available.
 
 #### `acl_cpp.math.internal`
 
-The following are available:
+The following functions are available:
 
-- `math.internal.barrett`  
-    - <https://github.com/atcoder/ac-library/blob/fe9b6fca9ab4e1be946ea23a4e6a2a751cf4aaa2/atcoder/internal_math.hpp#L25>
-- `math.internal.is_prime(n: int) -> bool:`  
-    - <https://github.com/atcoder/ac-library/blob/fe9b6fca9ab4e1be946ea23a4e6a2a751cf4aaa2/atcoder/internal_math.hpp#L83>
-- `math.internal.inv_gcd(a: long long, b: long long) -> (long long, long long):`  
-    - <https://github.com/atcoder/ac-library/blob/fe9b6fca9ab4e1be946ea23a4e6a2a751cf4aaa2/atcoder/internal_math.hpp#L107>
-- `math.internal.primitive_root(m: int) -> int:`  
-    - <https://github.com/atcoder/ac-library/blob/fe9b6fca9ab4e1be946ea23a4e6a2a751cf4aaa2/atcoder/internal_math.hpp#L144C15-L144C29>
+- `math.internal.is_prime(n: int) -> bool`
+- `math.internal.primitive_root(m: int) -> int`  
+  - `m` must be a prime number.
 
 #### `acl_cpp.convolution`
 
 The following functions are available:
 
-- `convolution.convolution(a: list[modint.modint998244353], b: list[modint.modint998244353]) -> list[modint.modint998244353]:`
-- `convolution.convolution(a: list[modint.modint], b: list[modint.modint]) -> list[modint.modint]:`
-    - Implements convolution for `modint`, not present in the C++ version.
-    - Note the condition for NTT-friendly mods: `(mod - 1) % (2 ** c) == 0` and `len(a) + len(b) - 1 <= 2 ** c`.
-- `convolution.convolution(a: list[long long], b: list[long long], mod: int) -> list[long long]:`
-    - Specify `mod` as the third argument for integer mod convolution.
-    - Ensure the mod satisfies the NTT-friendly condition above.
-- `convolution.convolution_ll(a: list[long long], b: list[long long]) -> list[long long]:`
+- `convolution.convolution998244353(a: list[int], b: list[int]) -> list[int]`  
+  - Each element of `a` and `b` must be in the range [0, 998244353).
+  - `len(a) + len(b) - 1 <= 2 ** 23`.
+- `convolution.convolution(a: list[int], b: list[int], mod: int) -> list[int]`  
+  - Implements convolution for dynamic_modint, which is not available in the C++ version.
+  - Each element of `a` and `b` must be in the range [0, mod).
+  - `mod` must be a prime number.
+  - There must exist an integer `c` such that `(mod - 1) % (2 ** c) == 0` and `len(a) + len(b) - 1 <= 2 ** c`.
+- `convolution.convolution_ll(a: list[long long], b: list[long long]) -> list[long long]`  
+  - `len(a) + len(b) - 1 <= 2 ** 23`.
+  - All elements of the resulting array fit within `long long`.
 
 #### `acl_cpp.convolution.internal`
 
-The following functions, useful for accelerating FPS (Formal Power Series) computations, are available.  
-Unlike the C++ version, they do not modify the arguments and return values.
+These functions are useful for optimizing formal power series (FPS). Unlike the C++ version, they return new arrays instead of modifying arguments.
 
-- `convolution.internal.butterfly(a: list[modint.modint998244353]) -> list[modint.modint998244353]:`
-- `convolution.internal.butterfly(a: list[modint.modint]) -> list[modint.modint]:`
-- `convolution.internal.butterfly_inv(a: list[modint.modint998244353]) -> list[modint.modint998244353]:`
-- `convolution.internal.butterfly_inv(a: list[modint.modint]) -> list[modint.modint]:`
+- `convolution.internal.butterfly998244353(a: list[int]) -> list[int]`  
+  - Each element of `a` must be in the range [0, 998244353).
+  - `len(a).bit_count() == 1`.
+  - `len(a) <= 2 ** 23`.
+- `convolution.internal.butterfly(a: list[int], mod: int) -> list[int]`  
+  - Each element of `a` must be in the range [0, mod).
+  - `mod` must be a prime number.
+  - `len(a).bit_count() == 1`.
+  - `(mod - 1) % len(a) == 0`.
+- `convolution.internal.butterfly_inv998244353(a: list[int]) -> list[int]`  
+  - Each element of `a` must be in the range [0, 998244353).
+  - `len(a).bit_count() == 1`.
+  - `len(a) <= 2 ** 23`.
+- `convolution.internal.butterfly_inv(a: list[int], mod: int) -> list[int]`  
+  - Each element of `a` must be in the range [0, mod).
+  - `mod` must be a prime number.
+  - `len(a).bit_count() == 1`.
+  - There must exist an integer `c` such that `(mod - 1) % len(a) == 0` and `len(a) <= 2 ** c`.
 
 #### `acl_cpp.modint`
 
-Includes `modint.modint998244353`, `modint.modint1000000007`, and `modint.modint`.  
-`static_modint` and `dynamic_modint` are not available.  
-TODO: Add support for creating multiple `dynamic_modint`.
+Not available.
 
-Supports the notation `modint(10) ** 10`.  
-`str(modint(10))` converts the value directly to a string.
-
-### Graph
+### Graphs
 
 #### `acl_cpp.dsu`
 
-Includes `dsu.dsu`.
+`dsu.dsu` is available.
 
 #### `acl_cpp.maxflow`
 
-`Cap = long long`.  
-Includes `maxflow.mf_graph` and `maxflow.mf_graph.edge`.
+Implemented with `Cap = long long`.  
+`maxflow.mf_graph` and `maxflow.mf_graph.edge` are available.
 
 #### `acl_cpp.mincostflow`
 
-`Cap = Cost = long long`.  
-Includes `mincostflow.mcf_graph` and `mincostflow.mcf_graph.edge`.
+Implemented with `Cap = Cost = long long`.  
+`mincostflow.mcf_graph` and `mincostflow.mcf_graph.edge` are available.
 
 #### `acl_cpp.scc`
 
-Includes `scc.scc_graph`.
+`scc.scc_graph` is available.
 
 #### `acl_cpp.twosat`
 
-Includes `twosat.two_sat`.
+`twosat.two_sat` is available.
