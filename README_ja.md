@@ -17,7 +17,7 @@ from acl_cpp.convolution import convolution998244353
 
 a = [1, 1]
 b = convolution998244353(a, a)
-print(*b)  # 1 2 1
+print(b)  # [1, 2, 1]
 ```
 
 ## 注意点
