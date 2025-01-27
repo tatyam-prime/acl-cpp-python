@@ -20,12 +20,12 @@ NB_MODULE(maxflow, m) {
     ;
     nb::class_<mf_graph::edge>(mf_graph_class, "edge")
     .def(nb::init<int, int, long long, long long>())
-    .def_rw("from_", &mf_graph::edge::from)
-    .def_rw("to", &mf_graph::edge::to)
-    .def_rw("cap", &mf_graph::edge::cap)
-    .def_rw("flow", &mf_graph::edge::flow)
+    .def_ro("from_", &mf_graph::edge::from)
+    .def_ro("to", &mf_graph::edge::to)
+    .def_ro("cap", &mf_graph::edge::cap)
+    .def_ro("flow", &mf_graph::edge::flow)
     .def("__repr__", [](const mf_graph::edge& e) {
-        return "<edge from=" + std::to_string(e.from) + " to=" + std::to_string(e.to) + " cap=" + std::to_string(e.cap) + " flow=" + std::to_string(e.flow) + ">";
+        return "<edge from_=" + std::to_string(e.from) + " to=" + std::to_string(e.to) + " cap=" + std::to_string(e.cap) + " flow=" + std::to_string(e.flow) + ">";
     })
     ;
 

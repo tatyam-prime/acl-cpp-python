@@ -10,14 +10,21 @@
 pip install acl-cpp-python
 ```
 
-## Usage
+## Example
 
 ```python
 from acl_cpp.convolution import convolution998244353
 
 a = [1, 1]
 b = convolution998244353(a, a)
-print(*b)  # 1 2 1
+print(b)  # [1, 2, 1]
+```
+
+```python
+from acl_cpp.string import z_algorithm
+
+a = z_algorithm("abacaba")
+print(a)  # [7, 0, 1, 0, 3, 0, 1]
 ```
 
 ## Notes
@@ -118,12 +125,14 @@ Not available.
 #### `acl_cpp.maxflow`
 
 Implemented with `Cap = long long`.  
-`maxflow.mf_graph` and `maxflow.mf_graph.edge` are available.
+`maxflow.mf_graph` and `maxflow.mf_graph.edge` are available.  
+In `maxflow.mf_graph.edge`, `from` has been renamed to `from_` as it is a reserved keyword.
 
 #### `acl_cpp.mincostflow`
 
 Implemented with `Cap = Cost = long long`.  
-`mincostflow.mcf_graph` and `mincostflow.mcf_graph.edge` are available.
+`mincostflow.mcf_graph` and `mincostflow.mcf_graph.edge` are available.  
+In `mincostflow.mcf_graph.edge`, `from` has been renamed to `from_` as it is a reserved keyword.
 
 #### `acl_cpp.scc`
 
