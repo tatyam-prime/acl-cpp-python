@@ -22,6 +22,8 @@ def test_math():
     g.slope(0, 1, 2)
 
     with pytest.raises(ValueError):
+        mcf_graph(-1)
+    with pytest.raises(ValueError):
         g.add_edge(-1, -1, -1, -1)
     with pytest.raises(ValueError):
         g.get_edge(-1)

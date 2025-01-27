@@ -8,6 +8,8 @@ def test_fenwicktree():
     assert a.sum(0, 5) == 1
 
     with pytest.raises(ValueError):
+        fenwick_tree(-1)
+    with pytest.raises(ValueError):
         a.add(-1, 0)
     with pytest.raises(ValueError):
         a.sum(1, 0)
