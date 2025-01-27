@@ -25,7 +25,7 @@ NB_MODULE(maxflow, m) {
     .def_rw("cap", &mf_graph::edge::cap)
     .def_rw("flow", &mf_graph::edge::flow)
     .def("__repr__", [](const mf_graph::edge& e) {
-        return "<edge from=" + std::to_string(e.from) + " to=" + std::to_string(e.to) + " cap=" + std::to_string(e.cap) + " flow=" + std::to_string(e.flow) + ">";
+        return "<edge from_=" + std::to_string(e.from) + " to=" + std::to_string(e.to) + " cap=" + std::to_string(e.cap) + " flow=" + std::to_string(e.flow) + ">";
     })
     ;
 

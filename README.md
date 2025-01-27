@@ -10,7 +10,7 @@
 pip install acl-cpp-python
 ```
 
-## Usage
+## Example
 
 ```python
 from acl_cpp.convolution import convolution998244353
@@ -118,12 +118,14 @@ Not available.
 #### `acl_cpp.maxflow`
 
 Implemented with `Cap = long long`.  
-`maxflow.mf_graph` and `maxflow.mf_graph.edge` are available.
+`maxflow.mf_graph` and `maxflow.mf_graph.edge` are available.  
+In `maxflow.mf_graph.edge`, `from` has been renamed to `from_` as it is a reserved keyword.
 
 #### `acl_cpp.mincostflow`
 
 Implemented with `Cap = Cost = long long`.  
-`mincostflow.mcf_graph` and `mincostflow.mcf_graph.edge` are available.
+`mincostflow.mcf_graph` and `mincostflow.mcf_graph.edge` are available.  
+In `mincostflow.mcf_graph.edge`, `from` has been renamed to `from_` as it is a reserved keyword.
 
 #### `acl_cpp.scc`
 

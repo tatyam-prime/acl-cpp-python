@@ -21,13 +21,13 @@ NB_MODULE(mincostflow, m) {
     ;
     nb::class_<mcf_graph::edge>(mcf_graph_class, "edge")
     .def(nb::init<int, int, long long, long long, long long>())
-    .def_rw("from", &mcf_graph::edge::from)
+    .def_rw("from_", &mcf_graph::edge::from)
     .def_rw("to", &mcf_graph::edge::to)
     .def_rw("cap", &mcf_graph::edge::cap)
     .def_rw("flow", &mcf_graph::edge::flow)
     .def_rw("cost", &mcf_graph::edge::cost)
     .def("__repr__", [](const mcf_graph::edge& e) {
-        return "<edge from=" + std::to_string(e.from) + " to=" + std::to_string(e.to) + " cap=" + std::to_string(e.cap) + " flow=" + std::to_string(e.flow) + " cost=" + std::to_string(e.cost) + ">";
+        return "<edge from_=" + std::to_string(e.from) + " to=" + std::to_string(e.to) + " cap=" + std::to_string(e.cap) + " flow=" + std::to_string(e.flow) + " cost=" + std::to_string(e.cost) + ">";
     })
     ;
 }

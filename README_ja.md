@@ -118,12 +118,14 @@ C++ 版との差異を以下に示します。
 #### `acl_cpp.maxflow`
 
 `Cap = long long` としています。  
-`maxflow.mf_graph`, `maxflow.mf_graph.edge` が存在します。
+`maxflow.mf_graph`, `maxflow.mf_graph.edge` が存在します。  
+`maxflow.mf_graph.edge` では、`from` が予約語となっているため、`from_` に変更しています。
 
 #### `acl_cpp.mincostflow`
 
-`Cap = Cost = long long` としています。
-`mincostflow.mcf_graph`, `mincostflow.mcf_graph.edge` が存在します。
+`Cap = Cost = long long` としています。  
+`mincostflow.mcf_graph`, `mincostflow.mcf_graph.edge` が存在します。  
+`mincostflow.mcf_graph.edge` では、`from` が予約語となっているため、`from_` に変更しています。
 
 #### `acl_cpp.scc`
 
