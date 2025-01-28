@@ -1,0 +1,135 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 20:05+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../string.md:1
+msgid "acl_cpp.string"
+msgstr ""
+
+#: ../../string.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/string.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-"
+"library/production/document_en/string.html)"
+
+#: ../../string.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/string.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/string.cpp)"
+
+#: ../../string.md:10
+msgid "string.suffix_array"
+msgstr ""
+
+#: ../../string.md:23
+msgid "$n = \\text{len}(s)$ として、以下で定める長さ $n$ の配列 `sa` を返します。"
+msgstr ""
+"Let $n = \\text{len}(s)$, returns an array `sa` of length $n$ as defined "
+"below."
+
+#: ../../string.md:25
+msgid "`sa` は $(0, 1, \\ldots, n-1)$ の順列である"
+msgstr "`sa` is a permutation of $(0, 1, \\ldots, n-1)$."
+
+#: ../../string.md:26
+msgid "`s[sa[i]:] < s[sa[i+1]:]` を満たす"
+msgstr "`s[sa[i]:] < s[sa[i+1]:]` holds."
+
+#: ../../string.md:28 ../../string.md:53 ../../string.md:76
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../string.md:30 ../../string.md:78
+msgid "(2) $-2^{63} \\leq s[i] \\lt 2^{63}$"
+msgstr ""
+
+#: ../../string.md:31
+msgid "(3) $0 \\leq s[i] \\leq \\text{upper} \\lt 2^{31}$"
+msgstr ""
+
+#: ../../string.md:33 ../../string.md:58 ../../string.md:80
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../string.md:35
+msgid "(1) $O(n)$"
+msgstr ""
+
+#: ../../string.md:36
+msgid "(2) $O(n \\log n)$ 時間, $O(n)$ 空間"
+msgstr "(2) $O(n \\log n)$ time, $O(n)$ space"
+
+#: ../../string.md:37
+msgid "(3) $O(n + \\mathrm{upper})$"
+msgstr ""
+
+#: ../../string.md:39
+msgid "string.lcp_array"
+msgstr ""
+
+#: ../../string.md:49
+msgid "$n = \\text{len}(s)$ として、以下で定める長さ $n-1$ の配列 `lcp` を返します。"
+msgstr ""
+"Let $n = \\text{len}(s)$, returns an array `lcp` of length $n-1$ as "
+"defined below."
+
+#: ../../string.md:51
+msgid "`lcp[i]` は `s[sa[i]:]` と `s[sa[i+1]:]` の LCP (Longest Common Prefix) の長さ"
+msgstr ""
+"`lcp[i]` is the length of the LCP (Longest Common Prefix) of `s[sa[i]:]` "
+"and `s[sa[i+1]:]`."
+
+#: ../../string.md:55
+msgid "<span style=\"color: red;\">`sa` は `s` の Suffix Array である</span>"
+msgstr "<span style=\"color: red;\">`sa` is the Suffix Array of `s`.</span>"
+
+#: ../../string.md:56
+msgid "これが満たされない場合の動作は未定義"
+msgstr "Behavior is undefined if this is not satisfied."
+
+#: ../../string.md:60 ../../string.md:82
+msgid "$O(n)$"
+msgstr ""
+
+#: ../../string.md:62
+msgid "string.z_algorithm"
+msgstr ""
+
+#: ../../string.md:72
+msgid "$n = \\text{len}(s)$ として、以下で定める長さ $n$ の配列 `z` を返します。"
+msgstr ""
+"Let $n = \\text{len}(s)$, returns an array `z` of length $n$ as defined "
+"below."
+
+#: ../../string.md:74
+msgid "`z[i]` は `s` と `s[i:]` の LCP (Longest Common Prefix) の長さ"
+msgstr ""
+"`z[i]` is the length of the LCP (Longest Common Prefix) of `s` and "
+"`s[i:]`."
+
+#: ../../string.md:84
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../string.md:109
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_i>"
+msgstr ""
+

@@ -1,0 +1,151 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 20:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../twosat.md:1
+msgid "acl_cpp.twosat"
+msgstr ""
+
+#: ../../twosat.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/twosat.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-"
+"library/production/document_en/twosat.html)"
+
+#: ../../twosat.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/twosat.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/twosat.cpp)"
+
+#: ../../twosat.md:6
+msgid "twosat.two_sat"
+msgstr ""
+
+#: ../../twosat.md:13
+msgid "2-SAT を解きます。 変数 $x_0, x_1, \\cdots, x_{n - 1}$ に関して、"
+msgstr ""
+"Solves the 2-SAT problem. For variables $x_0, x_1, \\cdots, x_{n - 1}$ "
+"and clauses with form"
+
+#: ../../twosat.md:16
+msgid "$(x_i = f) \\lor (x_j = g)$"
+msgstr "$(x_i = f) \\lor (x_j = g)$,"
+
+#: ../../twosat.md:18
+msgid "という節を追加していき、すべての節が満たされる変数の割当があるかを調べます。"
+msgstr "decides whether there is a truth assignment that satisfies all clauses."
+
+#: ../../twosat.md:20
+msgid "コンストラクタ"
+msgstr "Constructor"
+
+#: ../../twosat.md:27
+msgid "$n$ 変数の 2-SAT インスタンスを作成します。"
+msgstr "Creates a 2-SAT instance with $n$ variables."
+
+#: ../../twosat.md:29 ../../twosat.md:46 ../../twosat.md:64 ../../twosat.md:83
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../twosat.md:31
+msgid "$0 \\le n < 2^{31}$"
+msgstr ""
+
+#: ../../twosat.md:33 ../../twosat.md:51 ../../twosat.md:68 ../../twosat.md:88
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../twosat.md:35 ../../twosat.md:90
+msgid "$O(n)$"
+msgstr ""
+
+#: ../../twosat.md:37
+msgid "two_sat.add_clause"
+msgstr ""
+
+#: ../../twosat.md:44
+msgid "節 $(x_i = f) \\lor (x_j = g)$ を追加します。"
+msgstr "Adds a clause $(x_i = f) \\lor (x_j = g)$."
+
+#: ../../twosat.md:48
+msgid "$0 \\le i < n$"
+msgstr ""
+
+#: ../../twosat.md:49
+msgid "$0 \\le j < n$"
+msgstr ""
+
+#: ../../twosat.md:53
+msgid "ならし $O(1)$"
+msgstr "Amortized $O(1)$"
+
+#: ../../twosat.md:55
+msgid "two_sat.satisfiable"
+msgstr ""
+
+#: ../../twosat.md:62
+msgid "条件を足す割当が存在するかどうかを判定する。割当が存在するならば `true`、そうでないなら `false` を返す。"
+msgstr ""
+"Determines if there is an assignment that satisfies all the clauses. "
+"Returns `true` if such an assignment exists, otherwise returns `false`."
+
+#: ../../twosat.md:66
+msgid "複数回呼ぶことも可能。"
+msgstr "Can be called multiple times."
+
+#: ../../twosat.md:70
+msgid "足した制約の個数を $m$ として"
+msgstr "Let $m$ be the number of added constraints."
+
+#: ../../twosat.md:72
+msgid "$O(n + m)$"
+msgstr ""
+
+#: ../../twosat.md:74
+msgid "two_sat.answer"
+msgstr ""
+
+#: ../../twosat.md:81
+msgid "最後に呼んだ `satisfiable` の、すべての節を満たす割当を返します。"
+msgstr "Returns the assignment that satisfies all the clauses from the last call to `satisfiable`."
+
+#: ../../twosat.md:85
+msgid ""
+"<span style=\"color: red;\">`two_sat.satisfiable()` が `True` "
+"を返した後で呼び出すこと</span>"
+msgstr "<span style=\"color: red;\">Call this function after `two_sat.satisfiable()` returns `true`.</span>"
+
+#: ../../twosat.md:86
+msgid ""
+"`satisfiable` を呼ぶ前や、`satisfiable` で割当が存在しなかったときにこの関数を呼ぶと、中身が未定義の長さ $n$ の "
+"リストを返します。"
+msgstr ""
+"If called before `satisfiable` or when `satisfiable` returned `false`, returns a list of "
+"length $n$ with undefined content."
+
+#: ../../twosat.md:92
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../twosat.md:94
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_h>"
+msgstr ""
+
