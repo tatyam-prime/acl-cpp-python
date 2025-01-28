@@ -1,0 +1,49 @@
+name: Build and Deploy Sphinx Docs
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Ensure the full history is fetched
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip' 
+
+    - name: Install dependencies
+      run: |
+        python -m pip install Sphinx sphinx-copybutton sphinx-rtd-theme sphinx-intl myst-parser
+
+    - name: Build Sphinx documentation
+      run: |
+        cd docs
+        make ja en
+
+    - name: Deploy to GitHub Pages (ja)
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_build/ja/html
+        publish_branch: gh-pages
+        destination_dir: ${{ github.ref_name == 'main' && 'ja' || 'develop/ja' }}
+
+    - name: Deploy to GitHub Pages (en)
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_build/en/html
+        publish_branch: gh-pages
+        destination_dir: ${{ github.ref_name == 'main' && 'en' || 'develop/en' }}

@@ -13,4 +13,6 @@ def test_twosat():
     assert g.satisfiable() == False
 
     with pytest.raises(ValueError):
+        two_sat(-1)
+    with pytest.raises(ValueError):
         g.add_clause(-1, False, -1, True)

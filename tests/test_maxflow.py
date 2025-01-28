@@ -20,6 +20,8 @@ def test_math():
     assert g.min_cut(1) == [False, True, False, False, False]
 
     with pytest.raises(ValueError):
+        mf_graph(-1)
+    with pytest.raises(ValueError):
         g.add_edge(0, 0, -1)
     with pytest.raises(ValueError):
         g.get_edge(-1)

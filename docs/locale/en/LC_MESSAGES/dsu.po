@@ -1,0 +1,162 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 18:04+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../dsu.md:1
+msgid "acl_cpp.dsu"
+msgstr ""
+
+#: ../../dsu.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/dsu.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-library/production/document_en/dsu.html)"
+
+#: ../../dsu.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/dsu.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/dsu.cpp)"
+
+#: ../../dsu.md:6
+msgid "dsu.dsu"
+msgstr ""
+
+#: ../../dsu.md:13
+msgid "無向グラフに対して、"
+msgstr "Given an undirected graph, processes the following queries in $O(\\alpha(n))$ time (amortized)."
+
+#: ../../dsu.md:15
+msgid "辺の追加"
+msgstr "adding edges"
+
+#: ../../dsu.md:16
+msgid "$2$ 頂点が連結かの判定"
+msgstr "Deciding whether given two vertices are in the same connected component"
+
+#: ../../dsu.md:18
+msgid "をならし $O(\\alpha(n))$ 時間で処理することが出来ます。"
+msgstr "<span></span>"
+
+#: ../../dsu.md:20
+msgid "ここで、$\\alpha(n)$ はアッカーマン関数の逆関数で、ほとんど定数時間とみなせます。"
+msgstr "Here, $\\alpha(n)$ is the inverse Ackermann function, which can be considered almost constant time."
+
+#: ../../dsu.md:22
+msgid ""
+"また、内部的に各連結成分ごとに代表となる頂点を $1$ "
+"つ持っています。辺の追加により連結成分がマージされる時、新たな代表元は元の連結成分の代表元のうちどちらかになります。"
+msgstr ""
+"Each connected component internally has a representative vertex.  \n"
+"When two connected components are merged by edge addition, "
+"one of the two representatives of these connected components becomes the representative of the new connected component."
+
+#: ../../dsu.md:24
+msgid "コンストラクタ"
+msgstr "Constructor"
+
+#: ../../dsu.md:31
+msgid "$n$ 頂点 $0$ 辺の無向グラフを作ります。"
+msgstr "Creates an undirected graph with $n$ vertices and $0$ edges."
+
+#: ../../dsu.md:33 ../../dsu.md:52 ../../dsu.md:70 ../../dsu.md:88
+#: ../../dsu.md:105
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../dsu.md:35
+msgid "$0 \\le n \\lt 2^{31}$"
+msgstr ""
+
+#: ../../dsu.md:37 ../../dsu.md:57 ../../dsu.md:75 ../../dsu.md:92
+#: ../../dsu.md:109 ../../dsu.md:125
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../dsu.md:39 ../../dsu.md:127
+msgid "$O(n)$"
+msgstr ""
+
+#: ../../dsu.md:41
+msgid "dsu.merge"
+msgstr ""
+
+#: ../../dsu.md:48
+msgid "辺 $(a, b)$ を足します。"
+msgstr "Adds an edge $(a, b)$."
+
+#: ../../dsu.md:50
+msgid "$a, b$ が連結だった場合はその代表元、非連結だった場合は新たな代表元を返します。"
+msgstr "Returns the representative if $a$ and $b$ were already connected, otherwise returns the new representative."
+
+#: ../../dsu.md:54 ../../dsu.md:72 ../../dsu.md:90 ../../dsu.md:107
+msgid "$0 \\le a \\lt n$"
+msgstr ""
+
+#: ../../dsu.md:55 ../../dsu.md:73
+msgid "$0 \\le b \\lt n$"
+msgstr ""
+
+#: ../../dsu.md:59 ../../dsu.md:77 ../../dsu.md:94 ../../dsu.md:111
+msgid "ならし $O(\\alpha(n))$"
+msgstr "Amortized $O(\\alpha(n))$"
+
+#: ../../dsu.md:61
+msgid "dsu.same"
+msgstr ""
+
+#: ../../dsu.md:68
+msgid "頂点 $a, b$ が連結かどうかを返します。"
+msgstr "Returns whether vertices $a$ and $b$ are connected."
+
+#: ../../dsu.md:79
+msgid "dsu.leader"
+msgstr ""
+
+#: ../../dsu.md:86
+msgid "頂点 $a$ の属する連結成分の代表元を返します。"
+msgstr "Returns the representative of the connected component containing vertex $a$."
+
+#: ../../dsu.md:96
+msgid "dsu.size"
+msgstr ""
+
+#: ../../dsu.md:103
+msgid "頂点 $a$ の属する連結成分のサイズを返します。"
+msgstr "Returns the size of the connected component containing vertex $a$."
+
+#: ../../dsu.md:113
+msgid "dsu.groups"
+msgstr ""
+
+#: ../../dsu.md:120
+msgid "グラフを連結成分に分け、その情報を返します。"
+msgstr "Divides the graph into connected components and returns that information."
+
+#: ../../dsu.md:122
+msgid "返り値は「「一つの連結成分の頂点番号のリスト」のリスト」です。 （内側外側限らず）vector 内でどの順番で頂点が格納されているかは未定義です。"
+msgstr "The return value is a list of lists of vertex numbers, each representing a connected component. The order of vertices within each list and the order of the lists themselves are undefined."
+
+#: ../../dsu.md:129
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../dsu.md:131
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_a>"
+msgstr ""
+

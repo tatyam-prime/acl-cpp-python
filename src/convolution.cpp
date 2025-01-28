@@ -10,12 +10,12 @@ std::vector<modint998244353> butterfly998244353(std::vector<modint998244353> a) 
     butterfly(a);
     return a;
 }
-std::vector<modint> butterfly_dynamic(std::vector<modint> a, int mod) {
+std::vector<modint> butterfly_dynamic(std::vector<modint> a, int p) {
     if (a.empty()) return a;
     assert((a.size() & (a.size() - 1)) == 0);
-    assert((mod - 1) % a.size() == 0);
-    assert(internal::is_prime_constexpr(mod));
-    modint::set_mod(mod);
+    assert((p - 1) % a.size() == 0);
+    assert(internal::is_prime_constexpr(p));
+    modint::set_mod(p);
     butterfly(a);
     return a;
 }
@@ -26,20 +26,20 @@ std::vector<modint998244353> butterfly_inv998244353(std::vector<modint998244353>
     butterfly_inv(a);
     return a;
 }
-std::vector<modint> butterfly_inv_dynamic(std::vector<modint> a, int mod) {
+std::vector<modint> butterfly_inv_dynamic(std::vector<modint> a, int p) {
     if (a.empty()) return a;
     assert((a.size() & (a.size() - 1)) == 0);
-    assert((mod - 1) % a.size() == 0);
-    assert(internal::is_prime_constexpr(mod));
-    modint::set_mod(mod);
+    assert((p - 1) % a.size() == 0);
+    assert(internal::is_prime_constexpr(p));
+    modint::set_mod(p);
     butterfly_inv(a);
     return a;
 }
 auto convolution998244353 =
     static_cast<std::vector<modint998244353> (*)(std::vector<modint998244353>&&, std::vector<modint998244353>&&)>(convolution);
-std::vector<modint> convolution_dynamic(std::vector<modint>&& a, std::vector<modint>&& b, int mod) {
-    assert(internal::is_prime_constexpr(mod));
-    modint::set_mod(mod);
+std::vector<modint> convolution_dynamic(std::vector<modint>&& a, std::vector<modint>&& b, int p) {
+    assert(internal::is_prime_constexpr(p));
+    modint::set_mod(p);
     return convolution(std::move(a), std::move(b));
 }
 

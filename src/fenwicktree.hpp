@@ -13,7 +13,9 @@ template <class T> struct fenwick_tree {
 
   public:
     fenwick_tree() : _n(0) {}
-    explicit fenwick_tree(int n) : _n(n), data(n) {}
+    explicit fenwick_tree(int n) : _n(n), data(n) {
+        assert(n >= 0);
+    }
 
     void add(int p, T x) {
         assert(0 <= p && p < _n);

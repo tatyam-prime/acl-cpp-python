@@ -12,6 +12,8 @@ def test_dsu():
     assert a.groups() == [[0, 1], [2], [3], [4]]
 
     with pytest.raises(ValueError):
+        dsu(-1)
+    with pytest.raises(ValueError):
         a.merge(-1, -1)
     with pytest.raises(ValueError):
         a.same(-1, -1)

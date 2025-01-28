@@ -14,7 +14,9 @@ namespace atcoder {
 struct two_sat {
   public:
     two_sat() : _n(0), scc(0) {}
-    explicit two_sat(int n) : _n(n), _answer(n), scc(2 * n) {}
+    explicit two_sat(int n) : _n(n), _answer(n), scc(2 * n) {
+        assert(0 <= n);
+    }
 
     void add_clause(int i, bool f, int j, bool g) {
         assert(0 <= i && i < _n);

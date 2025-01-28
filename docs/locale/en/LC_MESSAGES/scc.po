@@ -1,0 +1,126 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 18:04+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../scc.md:1
+msgid "acl_cpp.scc"
+msgstr ""
+
+#: ../../scc.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/scc.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-library/production/document_en/scc.html)"
+
+#: ../../scc.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/scc.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/scc.cpp)"
+
+#: ../../scc.md:6
+msgid "scc.scc_graph"
+msgstr ""
+
+#: ../../scc.md:13
+msgid "有向グラフを強連結成分分解します。"
+msgstr "Decomposes a directed graph into strongly connected components."
+
+#: ../../scc.md:15
+msgid "コンストラクタ"
+msgstr "Constructor"
+
+#: ../../scc.md:22
+msgid "$n$ 頂点 $0$ 辺のグラフを作成します。"
+msgstr "Creates a graph with $n$ vertices and $0$ edges."
+
+#: ../../scc.md:24 ../../scc.md:41
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../scc.md:26
+msgid "$0 \\le n < 2^{31}$"
+msgstr ""
+
+#: ../../scc.md:28 ../../scc.md:46 ../../scc.md:63
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../scc.md:30
+msgid "$O(n)$"
+msgstr ""
+
+#: ../../scc.md:32
+msgid "scc_graph.add_edge"
+msgstr ""
+
+#: ../../scc.md:39
+msgid "頂点 $\\mathit{from\\_}$ から頂点 $\\mathit{to}$ への辺を追加します。"
+msgstr "Adds an edge from vertex $\\mathit{from\\_}$ to vertex $\\mathit{to}$."
+
+#: ../../scc.md:43
+msgid "$0 \\le \\mathit{from\\_} < n$"
+msgstr ""
+
+#: ../../scc.md:44
+msgid "$0 \\le \\mathit{to} < n$"
+msgstr ""
+
+#: ../../scc.md:48
+msgid "ならし $O(1)$"
+msgstr "Amortized $O(1)$"
+
+#: ../../scc.md:50
+msgid "scc_graph.scc"
+msgstr ""
+
+#: ../../scc.md:57
+msgid "以下の条件を満たすような、「頂点のリスト」のリストを返します。"
+msgstr "Returns a list of lists of vertices that satisfy the following conditions:"
+
+#: ../../scc.md:59
+msgid "全ての頂点がちょうど 1 つずつ、どれかのリストに含まれます。"
+msgstr "Each vertex appears in exactly one of the lists."
+
+#: ../../scc.md:60
+msgid "内側のリストと強連結成分が一対一に対応します。リスト内での頂点の順序は未定義です。"
+msgstr "Each inner list corresponds to a strongly connected component. The order of vertices within each list is undefined."
+
+#: ../../scc.md:61
+msgid ""
+"リストはトポロジカルソートされています。異なる強連結成分の頂点 $u, v$ について、$u$ から $v$ に到達できる時、$u$ "
+"の属するリストは $v$ の属するリストよりも前です。"
+msgstr ""
+"The lists are topologically sorted. i.e., for vertices $u$ and $v$ in different strongly connected components, if there exists a directed path from $u$ to $v$, the list containing $u$ appears earlier the list containing $v$."
+
+#: ../../scc.md:65
+msgid "追加した辺の本数を $m$ として"
+msgstr "Let $m$ be the number of edges added, then"
+
+#: ../../scc.md:67
+msgid "$O(n + m)$"
+msgstr ""
+
+#: ../../scc.md:69
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../scc.md:71
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_g>"
+msgstr ""
+

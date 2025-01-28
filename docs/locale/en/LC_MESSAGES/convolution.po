@@ -1,0 +1,259 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 18:04+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../convolution.md:1
+msgid "acl_cpp.convolution"
+msgstr ""
+
+#: ../../convolution.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/convolution.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-library/production/document_en/convolution.html)"
+
+#: ../../convolution.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/convolution.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/convolution.cpp)"
+
+#: ../../convolution.md:11
+msgid "convolution.convolution998244353"
+msgstr ""
+
+#: ../../convolution.md:18 ../../convolution.md:43
+msgid ""
+"$a, b$ のうちの少なくとも一方が空配列の場合、空配列を返します。   そうでない場合、以下で定義される長さ $\\text{len}(a) "
+"+ \\text{len}(b) - 1$ の配列 $c$ を返します。"
+msgstr ""
+"If at least one of $a$ or $b$ is an empty array, returns an empty array. Otherwise, returns an array $c$ of length $\\text{len}(a) + \\text{len}(b) - 1$ defined as follows."
+
+#: ../../convolution.md:21
+msgid ""
+"c[k] = \\left(\\sum_{i + j = k} a[i] \\cdot b[j]\\right) \\bmod "
+"{998244353}"
+msgstr ""
+
+#: ../../convolution.md:23 ../../convolution.md:48 ../../convolution.md:72
+
+#: ../../convolution.md:104 ../../convolution.md:123 ../../convolution.md:142
+#: ../../convolution.md:163
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../convolution.md:25
+msgid "<span style=\"color: red;\">$0 \\leq a[i], b[i] < 998244353$</span>"
+msgstr ""
+
+#: ../../convolution.md:26
+msgid "$\\text{len}(a) + \\text{len}(b) - 1 \\le 2^{23}$"
+msgstr ""
+
+#: ../../convolution.md:28
+msgid "$0 \\leq a[i], b[i] < 998244353$ を満たさない場合の動作は未定義です。"
+msgstr "Behavior is undefined if $0 \\leq a[i], b[i] < 998244353$ is not satisfied."
+
+#: ../../convolution.md:30 ../../convolution.md:57 ../../convolution.md:80
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../convolution.md:32 ../../convolution.md:59 ../../convolution.md:82
+msgid "$n = \\text{len}(a) + \\text{len}(b)$ として"
+msgstr "Let $n = \\text{len}(a) + \\text{len}(b)$, then"
+
+#: ../../convolution.md:34 ../../convolution.md:84
+msgid "$O(n \\log n)$"
+msgstr ""
+
+#: ../../convolution.md:36
+msgid "convolution.convolution"
+msgstr ""
+
+#: ../../convolution.md:46
+msgid "c[k] = \\left(\\sum_{i + j = k} a[i] \\cdot b[j]\\right) \\bmod {p}"
+msgstr ""
+
+#: ../../convolution.md:50
+msgid "<span style=\"color: red;\">$0 \\leq a[i], b[i] < p$</span>"
+msgstr ""
+
+#: ../../convolution.md:51 ../../convolution.md:145 ../../convolution.md:166
+msgid "$2 \\le p \\lt 2^{31}$"
+msgstr ""
+
+#: ../../convolution.md:52 ../../convolution.md:146 ../../convolution.md:167
+msgid "$p$ は素数"
+msgstr "$p$ is a prime number"
+
+#: ../../convolution.md:53
+msgid ""
+"ある非負整数 $k$ が存在し、$\\text{len}(a) + \\text{len}(b) - 1 \\le 2^k$ かつ $p-1$ が"
+" $2^k$ の倍数である"
+msgstr "There exists a non-negative integer $k$ such that $\\text{len}(a) + \\text{len}(b) - 1 \\le 2^k$ and $p-1$ is a multiple of $2^k$"
+
+#: ../../convolution.md:55
+msgid "$0 \\leq a[i], b[i] < p$ を満たさない場合の動作は未定義です。"
+msgstr "Behavior is undefined if $0 \\leq a[i], b[i] < p$ is not satisfied."
+
+#: ../../convolution.md:61
+msgid "$O(n \\log n + \\log p)$"
+msgstr ""
+
+#: ../../convolution.md:63
+msgid "convolution.convolution_ll"
+msgstr ""
+
+#: ../../convolution.md:70
+msgid "畳み込みを計算します。$a, b$ のうちの少なくとも一方が空配列の場合は空配列を返します。"
+msgstr "Calculates the convolution. If at least one of $a$ or $b$ is an empty array, returns an empty array."
+
+#: ../../convolution.md:74
+msgid "$\\text{len}(a) + \\text{len}(b) - 1 \\le 2^{24}$"
+msgstr ""
+
+#: ../../convolution.md:75
+msgid "$-2^{63} \\le a[i], b[i] < 2^{63}$"
+msgstr ""
+
+#: ../../convolution.md:76
+msgid ""
+"<span style=\"color: red;\">答えの配列を $c$ として、$-2^{63} \\le c[i] < "
+"2^{63}$</span>"
+msgstr ""
+"<span style=\"color: red;\">The resulting array $c$ satisfies $-2^{63} \\le c[i] < 2^{63}$</span>"
+
+#: ../../convolution.md:78
+msgid "$-2^{63} \\le c[i] < 2^{63}$ を満たさない場合の動作は未定義です。"
+msgstr "Behavior is undefined if $-2^{63} \\le c[i] < 2^{63}$ is not satisfied."
+
+#: ../../convolution.md:86
+msgid "convolution.internal"
+msgstr ""
+
+#: ../../convolution.md:88
+msgid "参照渡しでリストを変更することができないため、変更後のリストを返しています。"
+msgstr "Since lists cannot be modified by reference, the modified list is returned."
+
+#: ../../convolution.md:89
+msgid "butterfly 関数は畳み込みや FPS (形式的冪級数) を高速化するのに有用です。"
+msgstr "The butterfly function is useful for speeding up convolutions and FPS (Formal Power Series)."
+
+#: ../../convolution.md:90
+msgid "`butterfly_inv(butterfly(a))` すると各要素が `len(a)` 倍されるので、`len(a)` で割る必要があります。"
+msgstr "`butterfly_inv(butterfly(a))` multiplies each element by `len(a)`, so you need to divide by `len(a)`."
+
+#: ../../convolution.md:92
+msgid "convolution.internal.butterfly998244353"
+msgstr ""
+
+#: ../../convolution.md:99 ../../convolution.md:118
+msgid ""
+"$\\text{len}(a) = 2^k$ とし、関数 $\\text{bit_reverse}(x)$ を $x$ の下 $k$ "
+"ビットを左右反転させた整数とします。   mod $998244353$ の原始 $2^k$ 乗根を $g$ として、以下で定める長さ $2^k$"
+" の配列 $b$ を返します。"
+msgstr ""
+"Let $\\text{len}(a) = 2^k$ and define the function $\\text{bit_reverse}(x)$ as the integer obtained by reversing the lower $k$ bits of $x$. "
+"Using the primitive $2^k$-th root of unity $g$ modulo $998244353$, returns an array $b$ of length $2^k$ defined as follows."
+
+#: ../../convolution.md:102
+msgid ""
+"b[\\text{bit_reverse}(i)] = \\left(\\sum_{j = 0}^{2^k-1}g^{ij} \\cdot "
+"a[j]\\right)\\bmod{998244353}"
+msgstr ""
+
+#: ../../convolution.md:106 ../../convolution.md:125
+msgid "ある整数 $0 \\le k \\le 23$ が存在し、$\\text{len}(a) = 2^k$"
+msgstr "There exists an integer $0 \\le k \\le 23$ such that $\\text{len}(a) = 2^k$"
+
+#: ../../convolution.md:107 ../../convolution.md:126
+msgid "<span style=\"color: red;\">$0 \\leq a[i] < 998244353$</span>"
+msgstr ""
+
+#: ../../convolution.md:109 ../../convolution.md:128
+msgid "$0 \\leq a[i] < 998244353$ を満たさない場合の動作は未定義です。"
+msgstr "Behavior is undefined if $0 \\leq a[i] < 998244353$ is not satisfied."
+
+#: ../../convolution.md:111
+msgid "convolution.internal.butterfly998244353_inv"
+msgstr ""
+
+#: ../../convolution.md:121
+msgid ""
+"b[i] = \\left(\\sum_{j = 0}^{2^k-1}g^{-ij} \\cdot "
+"a[\\text{bit_reverse}(j)]\\right) \\bmod {998244353}"
+msgstr ""
+
+#: ../../convolution.md:130
+msgid "convolution.internal.butterfly"
+msgstr ""
+
+#: ../../convolution.md:137
+msgid ""
+"$\\text{len}(a) = 2^k$ とし、関数 $\\text{bit_reverse}(x)$ を $x$ の下 $k$ "
+"ビットを左右反転させた整数とします。   mod $p$ の原始 $2^k$ 乗根を $g$ として、以下で定める長さ $2^k$ の配列 $b$"
+" を返します。"
+msgstr ""
+"Let $\\text{len}(a) = 2^k$ and define the function $\\text{bit_reverse}(x)$ as the integer obtained by reversing the lower $k$ bits of $x$. "
+"Using the primitive $2^k$-th root of unity $g$ modulo $p$, returns an array $b$ of length $2^k$ defined as follows."
+
+#: ../../convolution.md:140
+msgid ""
+"b[\\text{bit_reverse}(i)] = \\left(\\sum_{j = 0}^{2^k-1}g^{ij} \\cdot "
+"a[j]\\right)\\bmod{p}"
+msgstr ""
+
+#: ../../convolution.md:144 ../../convolution.md:165
+msgid "ある非負整数 $k$ が存在し、$\\text{len}(a) = 2^k$ かつ $p-1$ が $2^k$ の倍数"
+msgstr "There exists a non-negative integer $k$ such that $\\text{len}(a) = 2^k$ and $p-1$ is a multiple of $2^k$"
+
+#: ../../convolution.md:147 ../../convolution.md:168
+msgid "<span style=\"color: red;\">$0 \\leq a[i] < p$</span>"
+msgstr ""
+
+#: ../../convolution.md:149 ../../convolution.md:170
+msgid "$0 \\leq a[i] < p$ を満たさない場合の動作は未定義です。"
+msgstr "Behavior is undefined if $0 \\leq a[i] < p$ is not satisfied."
+
+#: ../../convolution.md:151
+msgid "convolution.internal.butterfly_inv"
+msgstr ""
+
+#: ../../convolution.md:158
+msgid ""
+"$\\text{len}(a) = 2^k$ とし、関数 $\\text{bit_reverse}(x)$ を $x$ の下 $k$ "
+"ビットを左右反転させた整数とします。 mod $p$ の原始 $2^k$ 乗根を $g$ として、以下で定める長さ $2^k$ の配列 $b$ "
+"を返します。"
+msgstr ""
+"Let $\\text{len}(a) = 2^k$ and define the function $\\text{bit_reverse}(x)$ as the integer obtained by reversing the lower $k$ bits of $x$. "
+"Using the primitive $2^k$-th root of unity $g$ modulo $p$, returns an array $b$ of length $2^k$ defined as follows."
+
+#: ../../convolution.md:161
+msgid ""
+"b[i] = \\left(\\sum_{j = 0}^{2^k-1}g^{-ij} \\cdot "
+"a[\\text{bit_reverse}(j)]\\right) \\bmod {p}"
+msgstr ""
+
+#: ../../convolution.md:172
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../convolution.md:174 ../../convolution.md:187
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_f>"
+msgstr ""
+

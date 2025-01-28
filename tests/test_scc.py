@@ -12,5 +12,7 @@ def test_fenwicktree():
     assert a.scc() == [[0, 1], [2], [3], [4]]
 
     with pytest.raises(ValueError):
+        scc_graph(-1)
+    with pytest.raises(ValueError):
         a.add_edge(-1, -1)
 

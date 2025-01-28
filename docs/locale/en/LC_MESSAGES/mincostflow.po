@@ -1,0 +1,285 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 20:08+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../mincostflow.md:1
+msgid "acl_cpp.mincostflow"
+msgstr ""
+
+#: ../../mincostflow.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/mincostflow.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-"
+"library/production/document_en/mincostflow.html)"
+
+#: ../../mincostflow.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/mincostflow.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/mincostflow.cpp)"
+
+#: ../../mincostflow.md:6
+msgid "mincostflow.mcf_graph"
+msgstr ""
+
+#: ../../mincostflow.md:13
+msgid ""
+"[最小費用流問題](https://en.wikipedia.org/wiki/Minimum-cost_flow_problem) "
+"を扱うライブラリです。"
+msgstr ""
+"This is a library to solve the [minimum cost flow "
+"problem](https://en.wikipedia.org/wiki/Minimum-cost-flow_problem)."
+
+#: ../../mincostflow.md:15 ../../mincostflow.md:117
+msgid "コンストラクタ"
+msgstr "Constructor"
+
+#: ../../mincostflow.md:22
+msgid "$n$ 頂点 $0$ 辺のグラフを作ります。"
+msgstr "Creates a graph with $n$ vertices and $0$ edges."
+
+#: ../../mincostflow.md:24 ../../mincostflow.md:41 ../../mincostflow.md:64
+#: ../../mincostflow.md:96 ../../mincostflow.md:133
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../mincostflow.md:26
+msgid "$0 \\le n < 2^{31}$"
+msgstr ""
+
+#: ../../mincostflow.md:28 ../../mincostflow.md:47 ../../mincostflow.md:68
+#: ../../mincostflow.md:105 ../../mincostflow.md:139 ../../mincostflow.md:152
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../mincostflow.md:30
+msgid "$O(n)$"
+msgstr ""
+
+#: ../../mincostflow.md:32
+msgid "mcf_graph.add_edge"
+msgstr ""
+
+#: ../../mincostflow.md:39
+msgid ""
+"頂点 $\\mathit{from\\_}$ から頂点 $\\mathit{to}$ へ最大容量 $\\mathit{cap}$, コスト "
+"$\\mathit{cost}$, 流量 $0$ の辺を追加します。何番目に追加された辺かを返します (0-origin) 。"
+msgstr ""
+"Adds an edge from vertex $\\mathit{from\\_}$ to vertex $\\mathit{to}$ "
+"with maximum capacity $\\mathit{cap}$, cost $\\mathit{cost}$, and flow "
+"$0$. Returns the index of the added edge (0-origin)."
+
+#: ../../mincostflow.md:43
+msgid "$0 \\le \\mathit{from\\_} < n$"
+msgstr ""
+
+#: ../../mincostflow.md:44
+msgid "$0 \\le \\mathit{to} < n$"
+msgstr ""
+
+#: ../../mincostflow.md:45
+msgid "$0 \\le \\mathit{cap}, \\mathit{cost} < 2^{63}$"
+msgstr ""
+
+#: ../../mincostflow.md:49
+msgid "ならし $O(1)$"
+msgstr "Amortized $O(1)$"
+
+#: ../../mincostflow.md:51
+msgid "mcf_graph.flow"
+msgstr ""
+
+#: ../../mincostflow.md:61
+msgid "(1) `flow(s, t, (1 << 63) - 1)` と等価です。"
+msgstr "(1) Equivalent to `flow(s, t, (1 << 63) - 1)`."
+
+#: ../../mincostflow.md:62
+msgid ""
+"(2) 流量 $\\mathit{flow\\_limit}$ に達するか、これ以上流せなくなるまで頂点 $s$ から頂点 $t$ "
+"へ流し、流せた量と、その量を流すための最小コストを返します。"
+msgstr ""
+"(2) Sends flow from vertex $s$ to vertex $t$ until the flow limit is "
+"reached or no more flow can be sent. Returns the amount of flow sent and "
+"the minimum cost to send that flow."
+
+#: ../../mincostflow.md:66 ../../mincostflow.md:70
+msgid "`slope` と同じ"
+msgstr "Same as `slope`."
+
+#: ../../mincostflow.md:72
+msgid "mcf_graph.slope"
+msgstr ""
+
+#: ../../mincostflow.md:82
+msgid "(1) `slope(s, t, (1 << 63) - 1)` と等価です。"
+msgstr "(1) Equivalent to `slope(s, t, (1 << 63) - 1)`."
+
+#: ../../mincostflow.md:84
+msgid "(2) 流量に対する最小コストは広義単調増加・下に凸な折れ線 (区分線形関数) となります。この折れ線の頂点を返します。"
+msgstr ""
+"(2) The minimum cost for the flow is a polyline (piecewise linear "
+"function) that is non-decreasing and convex. Returns the vertices of this"
+" polyline."
+
+#: ../../mincostflow.md:86
+msgid "具体的には、流量 $x$ の時の最小コストを $g(x)$ として、$(x, g(x))$ の列を以下の条件を満たすように返します。"
+msgstr ""
+"Specifically, returns the sequence of $(x, g(x))$ such that $g(x)$ is "
+"the minimum cost for flow $x$, satisfying the following conditions:"
+
+#: ../../mincostflow.md:88
+msgid "返り値の最初の点は $(0, 0)$"
+msgstr "The first point of the return value is $(0, 0)$."
+
+#: ../../mincostflow.md:89
+msgid "返り値の $x$ は狭義単調増加、$g(x)$ は広義単調増加"
+msgstr ""
+"$x$ in the return value is strictly increasing, and $g(x)$ is non-"
+"decreasing."
+
+#: ../../mincostflow.md:90
+msgid "返り値の最後の点は、`y = flow(s, t, flow_limit)[0]` として $(y, g(y))$"
+msgstr ""
+"The last point of the return value is $(y, g(y))$, where `y = flow(s, t, "
+"flow_limit)[0]`."
+
+#: ../../mincostflow.md:91
+msgid "返り値の中間の点で $g(x)$ の傾きが増加する（すなわち、同一直線上の $3$ 点を含まない）"
+msgstr ""
+"The slope of $g(x)$ increases at the intermediate points of the return "
+"value (i.e., it does not contain three points on the same line)."
+
+#: ../../mincostflow.md:92
+msgid "返り値の点を順に繋いだ折れ線が $g(x)\\ (0 \\le x \\le \\text{flow_limit})$ のグラフを表現する"
+msgstr ""
+"The polyline connecting the points of the return value represents the "
+"graph of $g(x)\\ (0 \\le x \\le \\text{flow_limit})$."
+
+#: ../../mincostflow.md:94
+msgid "$g(x)$ が **64 bit 符号付き整数** に収まらない場合、mod $2^{64}$ で等しい値を返すはずです。"
+msgstr ""
+"If $g(x)$ does not fit in a **64-bit signed integer**, it should return "
+"the value modulo $2^{64}$."
+
+#: ../../mincostflow.md:98
+msgid "$s \\neq t$"
+msgstr ""
+
+#: ../../mincostflow.md:99
+msgid "$0 \\leq s, t \\lt n$"
+msgstr ""
+
+#: ../../mincostflow.md:100
+msgid "<span style=\"color: red\">`slope` や `flow` を合わせて複数回呼んだときの動作は未定義</span>"
+msgstr ""
+"<span style=\"color: red\">Behavior is undefined when `slope` or `flow` "
+"are called multiple times together.</span>"
+
+#: ../../mincostflow.md:101
+msgid ""
+"<span style=\"color: red\">辺のコストの最大値を $x$ として、$n \\cdot x \\leq 8 \\times"
+" 10^{18} + 1000$"
+msgstr ""
+"<span style=\"color: red\">Let $x$ be the maximum cost of an edge, then "
+"$n \\cdot x \\leq 8 \\times 10^{18} + 1000$.</span>"
+
+#: ../../mincostflow.md:102
+msgid ""
+"<span style=\"color: red\">より正確には、(単純パスの最大コスト) $\\leq 8 \\times 10^{18} +"
+" 1000$</span>"
+msgstr ""
+"<span style=\"color: red\">More precisely, (the maximum cost of a simple "
+"path)${}\\leq 8 \\times 10^{18} + 1000$.</span>"
+
+#: ../../mincostflow.md:103
+msgid "これが満たされない場合の動作は未定義"
+msgstr "Behavior is undefined if this is not satisfied."
+
+#: ../../mincostflow.md:107
+msgid "$F$ を流量、$m$ を追加した辺の本数として"
+msgstr "Let $F$ be the flow and $m$ be the number of edges added."
+
+#: ../../mincostflow.md:109
+msgid "$O(F (n + m) \\log (n + m))$"
+msgstr ""
+
+#: ../../mincostflow.md:111
+msgid "mcf_graph.edge"
+msgstr ""
+
+#: ../../mincostflow.md:113
+msgid ""
+"mcf_graph 上の辺を表す class です。read-only な変数 `from_`, `to`, `cap`, `flow`, "
+"`cost` からなります。"
+msgstr ""
+"This is a class representing an edge in the mcf_graph. It consists of "
+"read-only variables `from_`, `to`, `cap`, `flow`, and `cost`."
+
+#: ../../mincostflow.md:114
+msgid "`cap` は最大容量、`flow` は現在の流量を表します。"
+msgstr ""
+"`cap` represents the maximum capacity, and `flow` represents the current "
+"flow."
+
+#: ../../mincostflow.md:115
+msgid "`from` は予約語なので `from_` としています。"
+msgstr "`from` is a reserved word, so it is named `from_`."
+
+#: ../../mincostflow.md:124
+msgid "mcf_graph.get_edge"
+msgstr ""
+
+#: ../../mincostflow.md:131
+msgid "$i$ 番目に追加された辺の現在の状態を返します。"
+msgstr "Returns the current state of the $i$-th added edge."
+
+#: ../../mincostflow.md:135
+msgid "$m$ をこれまでに追加された辺の数として"
+msgstr "Let $m$ be the number of edges added so far."
+
+#: ../../mincostflow.md:137
+msgid "$0 \\le i < m$"
+msgstr ""
+
+#: ../../mincostflow.md:141
+msgid "$O(1)$"
+msgstr ""
+
+#: ../../mincostflow.md:143
+msgid "mcf_graph.edges"
+msgstr ""
+
+#: ../../mincostflow.md:150
+msgid "すべての辺の現在の状態を返します。辺は追加された順に並びます。"
+msgstr ""
+"Returns the current state of all edges. The edges are ordered by the "
+"order they were added."
+
+#: ../../mincostflow.md:154
+msgid "$O(m)$"
+msgstr ""
+
+#: ../../mincostflow.md:156
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../mincostflow.md:158
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_e>"
+msgstr ""

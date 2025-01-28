@@ -1,0 +1,255 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-28 18:04+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../maxflow.md:1
+msgid "acl_cpp.maxflow"
+msgstr ""
+
+#: ../../maxflow.md:3
+msgid ""
+"[C++ 版のドキュメント](https://atcoder.github.io/ac-"
+"library/production/document_ja/maxflow.html)"
+msgstr ""
+"[C++ version documentation](https://atcoder.github.io/ac-library/production/document_en/maxflow.html)"
+
+#: ../../maxflow.md:4
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/maxflow.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/maxflow.cpp)"
+
+#: ../../maxflow.md:6
+msgid "maxflow.mf_graph"
+msgstr ""
+
+#: ../../maxflow.md:13
+#, python-format
+msgid ""
+"[最大フロー問題](https://ja.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E3%83%95%E3%83%AD%E3%83%BC%E5%95%8F%E9%A1%8C)"
+" を解くライブラリです。"
+msgstr ""
+"This is a library to solve the [maximum flow problem](https://en.wikipedia.org/wiki/Maximum_flow_problem)."
+
+#: ../../maxflow.md:15 ../../maxflow.md:100
+msgid "コンストラクタ"
+msgstr "Constructor"
+
+#: ../../maxflow.md:22
+msgid "$n$ 頂点 $0$ 辺のグラフを作ります。"
+msgstr "Creates a graph with $n$ vertices and $0$ edges."
+
+#: ../../maxflow.md:24 ../../maxflow.md:41 ../../maxflow.md:65
+#: ../../maxflow.md:116 ../../maxflow.md:148
+msgid "**制約**"
+msgstr "**Constraints**"
+
+#: ../../maxflow.md:26
+msgid "$0 \\le n < 2^{31}$"
+msgstr ""
+
+#: ../../maxflow.md:28 ../../maxflow.md:47 ../../maxflow.md:72
+#: ../../maxflow.md:122 ../../maxflow.md:135
+msgid "**計算量**"
+msgstr "**Complexity**"
+
+#: ../../maxflow.md:30
+msgid "$O(n)$"
+msgstr ""
+
+#: ../../maxflow.md:32
+msgid "mf_graph.add_edge"
+msgstr ""
+
+#: ../../maxflow.md:39
+msgid ""
+"頂点 $\\mathit{from\\_}$ から頂点 $\\mathit{to}$ へ最大容量 $\\mathit{cap}$ 流量 $0$ "
+"の辺を追加します。何番目に追加された辺かを返します (0-origin) 。"
+msgstr ""
+"Adds an edge from vertex $\\mathit{from\\_}$ to vertex $\\mathit{to}$ with maximum capacity $\\mathit{cap}$ and flow $0$. Returns the index of the added edge (0-origin)."
+
+#: ../../maxflow.md:43
+msgid "$0 \\le \\mathit{from\\_} < n$"
+msgstr ""
+
+#: ../../maxflow.md:44
+msgid "$0 \\le \\mathit{to} < n$"
+msgstr ""
+
+#: ../../maxflow.md:45
+msgid "$0 \\le \\mathit{cap} < 2^{63}$"
+msgstr ""
+
+#: ../../maxflow.md:49
+msgid "ならし $O(1)$"
+msgstr "Amortized $O(1)$"
+
+#: ../../maxflow.md:51
+msgid "mf_graph.flow"
+msgstr ""
+
+#: ../../maxflow.md:61
+msgid "(1) `flow(s, t, (1 << 63) - 1)` と等価です。"
+msgstr "(1) Equivalent to `flow(s, t, (1 << 63) - 1)`."
+
+#: ../../maxflow.md:62
+msgid "(2) 頂点 $s$ から頂点 $t$ へ流量 $\\mathit{flow\\_limit}$ に達するまで流せる限り流し、流せた量を返します。"
+msgstr "(2) Sends as much flow as possible from vertex $s$ to vertex $t$ up to the flow limit $\\mathit{flow\\_limit}$, and returns the amount of flow sent."
+
+#: ../../maxflow.md:63
+msgid ""
+"複数回呼ぶことも可能です。詳細な挙動は [Appendix](https://atcoder.github.io/ac-"
+"library/production/document_ja/appendix.html) を参照してください。"
+msgstr ""
+"`flow` can be called multiple times. For detailed behavior, see the [Appendix](https://atcoder.github.io/ac-library/production/document_en/appendix.html)."
+
+#: ../../maxflow.md:67
+msgid "$0 \\le s < n$"
+msgstr ""
+
+#: ../../maxflow.md:68
+msgid "$0 \\le t < n$"
+msgstr ""
+
+#: ../../maxflow.md:69
+msgid "$s \\neq t$"
+msgstr ""
+
+#: ../../maxflow.md:70
+msgid "$0 \\le \\mathit{flow\\_limit} < 2^{63}$"
+msgstr ""
+
+#: ../../maxflow.md:74
+msgid "$m$ を追加された辺数として"
+msgstr "Let $m$ be the number of edges added."
+
+#: ../../maxflow.md:76
+msgid "$O((n + m) \\sqrt{m})$ (辺の容量がすべて $1$ のとき)"
+msgstr "$O((n + m) \\sqrt{m})$ (when all edge capacities are $1$)"
+
+#: ../../maxflow.md:77
+msgid "$O(n^2 m)$"
+msgstr ""
+
+#: ../../maxflow.md:78
+msgid "返り値を $F$ として $O(F(n + m))$"
+msgstr "Let $F$ be the return value, $O(F(n + m))$"
+
+#: ../../maxflow.md:79
+msgid ""
+"参考文献: [Dinic "
+"法とその計算量](https://misawa.github.io/others/flow/dinic_time_complexity.html)"
+msgstr ""
+"Reference: [Dinic's algorithm and its complexity](https://misawa.github.io/others/flow/dinic_time_complexity.html)"
+
+#: ../../maxflow.md:81
+msgid "mf_graph.min_cut"
+msgstr ""
+
+#: ../../maxflow.md:88
+msgid "以下で定める長さ $n$ の bool の配列 `cut` を返します。"
+msgstr "Returns a bool array `cut` of length $n$ as defined below."
+
+#: ../../maxflow.md:90
+msgid "`cut[i]` は、現在の残余グラフにおいて、頂点 $s$ から頂点 $i$ へ到達可能かどうか"
+msgstr "`cut[i]` indicates whether vertex $i$ is reachable from vertex $s$ in the current residual graph."
+
+#: ../../maxflow.md:92
+msgid ""
+"`flow(s, t)` をちょうど $1$ 回呼んだ後に `min_cut(s)` を呼ぶと、返り値は $s$-$t$ "
+"間の最小カットに対応します。詳細な挙動は [Appendix](https://atcoder.github.io/ac-"
+"library/production/document_ja/appendix.html) を参照してください。"
+msgstr ""
+"Calling `min_cut(s)` after calling `flow(s, t)` exactly once will return the minimum cut between $s$ and $t$. For detailed behavior, see the [Appendix](https://atcoder.github.io/ac-library/production/document_en/appendix.html)."
+
+#: ../../maxflow.md:94
+msgid "mf_graph.edge"
+msgstr ""
+
+#: ../../maxflow.md:96
+msgid ""
+"mf_graph 上の辺を表す class です。read-only な変数 `from_`, `to`, `cap`, `flow` "
+"からなります。"
+msgstr ""
+"This is a class representing an edge in the mf_graph. It consists of read-only variables `from_`, `to`, `cap`, and `flow`."
+
+#: ../../maxflow.md:97
+msgid "`cap` は最大容量、`flow` は現在の流量を表します。"
+msgstr "`cap` represents the maximum capacity, and `flow` represents the current flow."
+
+#: ../../maxflow.md:98
+msgid "`from` は予約語なので `from_` としています。"
+msgstr "`from` is a reserved word, so it is named `from_`."
+
+#: ../../maxflow.md:107
+msgid "mf_graph.get_edge"
+msgstr ""
+
+#: ../../maxflow.md:114
+msgid "$i$ 番目に追加された辺の現在の状態を返します。"
+msgstr "Returns the current state of the $i$-th added edge."
+
+#: ../../maxflow.md:118
+msgid "$m$ をこれまでに追加された辺の数として"
+msgstr "Let $m$ be the number of edges added so far."
+
+#: ../../maxflow.md:120 ../../maxflow.md:150
+msgid "$0 \\le i < m$"
+msgstr ""
+
+#: ../../maxflow.md:124
+msgid "$O(1)$"
+msgstr ""
+
+#: ../../maxflow.md:126
+msgid "mf_graph.edges"
+msgstr ""
+
+#: ../../maxflow.md:133
+msgid "すべての辺の現在の状態を返します。辺は追加された順に並びます。"
+msgstr "Returns the current state of all edges. The edges are ordered by the order they were added."
+
+#: ../../maxflow.md:137
+msgid "$O(m)$"
+msgstr ""
+
+#: ../../maxflow.md:139
+msgid "mf_graph.change_edge"
+msgstr ""
+
+#: ../../maxflow.md:146
+msgid ""
+"$i$ 番目 (0-origin) に追加された辺の最大容量を $\\mathit{new\\_cap}$ 、流量を "
+"$\\mathit{new\\_flow}$ に変更します。詳細は [Appendix](https://atcoder.github.io"
+"/ac-library/production/document_ja/appendix.html) を参照してください。"
+msgstr ""
+"Changes the maximum capacity of the $i$-th (0-origin) added edge to $\\mathit{new\\_cap}$ and the flow to $\\mathit{new\\_flow}$. For details, see the [Appendix](https://atcoder.github.io/ac-library/production/document_en/appendix.html)."
+
+#: ../../maxflow.md:151
+msgid "$0 \\le \\mathit{new\\_flow} \\le \\mathit{new\\_cap} < 2^{63}$"
+msgstr ""
+
+#: ../../maxflow.md:153
+msgid "使用例"
+msgstr "Examples"
+
+#: ../../maxflow.md:155
+msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_d>"
+msgstr ""
+
