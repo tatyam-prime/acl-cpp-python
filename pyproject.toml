@@ -30,6 +30,7 @@ cmake.build-type = "Release"
 [project.urls]
 homepage = "https://github.com/tatyam-prime/acl-cpp-python"
 repository = "https://github.com/tatyam-prime/acl-cpp-python"
+documentation = "https://tatam-prime.github.io/acl-cpp-python/en/"
 
 [tool.cibuildwheel]
 build = ["cp3{9,13}-*", "pp3{9,10}-*"]
