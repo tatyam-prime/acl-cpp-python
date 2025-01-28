@@ -7,7 +7,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "acl-cpp-python"
-version = "0.4.1"
+version = "0.5.0"
 readme = "README.md"
 description = "Python bindings for the AtCoder Library"
 requires-python = ">=3.9"
