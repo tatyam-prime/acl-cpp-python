@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>acl_cpp.string &mdash; acl-cpp-python v0.4.1 ドキュメント v0.4.1 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=aad4f7c3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="acl_cpp.math" href="math.html" />
+    <link rel="prev" title="acl_cpp.fenwicktree" href="fenwicktree.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            acl-cpp-python v0.4.1 ドキュメント
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fenwicktree.html">acl_cpp.fenwicktree</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">acl_cpp.string</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#string-suffix-array">string.suffix_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-lcp-array">string.lcp_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-z-algorithm">string.z_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">acl_cpp.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convolution.html">acl_cpp.convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsu.html">acl_cpp.dsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxflow.html">acl_cpp.maxflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mincostflow.html">acl_cpp.mincostflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scc.html">acl_cpp.scc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twosat.html">acl_cpp.twosat</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acl-cpp-python v0.4.1 ドキュメント</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">acl_cpp.string</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/string.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acl-cpp-string">
+<h1>acl_cpp.string<a class="headerlink" href="#acl-cpp-string" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atcoder.github.io/ac-library/production/document_ja/string.html">C++ 版のドキュメント</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/string.cpp">ソースコード</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.string</span><span class="w"> </span><span class="kn">import</span> <span class="n">suffix_array</span><span class="p">,</span> <span class="n">lcp_array</span><span class="p">,</span> <span class="n">z_algorithm</span>
+</pre></div>
+</div>
+<section id="string-suffix-array">
+<h2>string.suffix_array<a class="headerlink" href="#string-suffix-array" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) vector&lt;int&gt; suffix_array(string s)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">suffix_array</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+
+<span class="c1"># (2) vector&lt;int&gt; suffix_array&lt;ll&gt;(vector&lt;ll&gt; s)   </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">suffix_array</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+
+<span class="c1"># (3) vector&lt;int&gt; suffix_array(vector&lt;int&gt; s, int upper)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">suffix_array</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">upper</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(n = \text{len}(s)\)</span> として、以下で定める長さ <span class="math notranslate nohighlight">\(n\)</span> の配列 <code class="docutils literal notranslate"><span class="pre">sa</span></code> を返します。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sa</span></code> は <span class="math notranslate nohighlight">\((0, 1, \ldots, n-1)\)</span> の順列である</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s[sa[i]:]</span> <span class="pre">&lt;</span> <span class="pre">s[sa[i+1]:]</span></code> を満たす</p></li>
+</ul>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p>(2) <span class="math notranslate nohighlight">\(-2^{63} \leq s[i] \lt 2^{63}\)</span></p></li>
+<li><p>(3) <span class="math notranslate nohighlight">\(0 \leq s[i] \leq \text{upper} \lt 2^{31}\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p>(1) <span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+<li><p>(2) <span class="math notranslate nohighlight">\(O(n \log n)\)</span> 時間, <span class="math notranslate nohighlight">\(O(n)\)</span> 空間</p></li>
+<li><p>(3) <span class="math notranslate nohighlight">\(O(n + \mathrm{upper})\)</span></p></li>
+</ul>
+</section>
+<section id="string-lcp-array">
+<h2>string.lcp_array<a class="headerlink" href="#string-lcp-array" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) vector&lt;int&gt; lcp_array(string s, vector&lt;int&gt; sa)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lcp_array</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sa</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+
+<span class="c1"># (2) vector&lt;int&gt; lcp_array&lt;ll&gt;(vector&lt;ll&gt; s, vector&lt;int&gt; sa)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lcp_array</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">sa</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(n = \text{len}(s)\)</span> として、以下で定める長さ <span class="math notranslate nohighlight">\(n-1\)</span> の配列 <code class="docutils literal notranslate"><span class="pre">lcp</span></code> を返します。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lcp[i]</span></code> は <code class="docutils literal notranslate"><span class="pre">s[sa[i]:]</span></code> と <code class="docutils literal notranslate"><span class="pre">s[sa[i+1]:]</span></code> の LCP (Longest Common Prefix) の長さ</p></li>
+</ul>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span style="color: red;"><code class="docutils literal notranslate"><span class="pre">sa</span></code> は <code class="docutils literal notranslate"><span class="pre">s</span></code> の Suffix Array である</span></p>
+<ul>
+<li><p>これが満たされない場合の動作は未定義</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+<section id="string-z-algorithm">
+<h2>string.z_algorithm<a class="headerlink" href="#string-z-algorithm" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) vector&lt;int&gt; z_algorithm(string s)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">z_algorithm</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+
+<span class="c1"># (2) vector&lt;int&gt; z_algorithm&lt;ll&gt;(vector&lt;ll&gt; s)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">z_algorithm</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(n = \text{len}(s)\)</span> として、以下で定める長さ <span class="math notranslate nohighlight">\(n\)</span> の配列 <code class="docutils literal notranslate"><span class="pre">z</span></code> を返します。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">z[i]</span></code> は <code class="docutils literal notranslate"><span class="pre">s</span></code> と <code class="docutils literal notranslate"><span class="pre">s[i:]</span></code> の LCP (Longest Common Prefix) の長さ</p></li>
+</ul>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p>(2) <span class="math notranslate nohighlight">\(-2^{63} \leq s[i] \lt 2^{63}\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>使用例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.string</span><span class="w"> </span><span class="kn">import</span> <span class="n">suffix_array</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;missisippi&quot;</span>
+<span class="n">sa</span> <span class="o">=</span> <span class="n">suffix_array</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;i&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ippi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;isippi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;issisippi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;missisippi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ppi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sippi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sisippi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ssisippi&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sa</span><span class="p">,</span> <span class="n">answer</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span> <span class="o">==</span> <span class="n">t</span>
+</pre></div>
+</div>
+<p>AC code of <a class="reference external" href="https://atcoder.jp/contests/practice2/tasks/practice2_i">https://atcoder.jp/contests/practice2/tasks/practice2_i</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.string</span><span class="w"> </span><span class="kn">import</span> <span class="n">suffix_array</span><span class="p">,</span> <span class="n">lcp_array</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">sa</span> <span class="o">=</span> <span class="n">suffix_array</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">lcp</span> <span class="o">=</span> <span class="n">lcp_array</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sa</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lcp</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fenwicktree.html" class="btn btn-neutral float-left" title="acl_cpp.fenwicktree" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="math.html" class="btn btn-neutral float-right" title="acl_cpp.math" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC0 1.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
