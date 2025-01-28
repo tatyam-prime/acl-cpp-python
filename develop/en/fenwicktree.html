@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>acl_cpp.fenwicktree &mdash; acl-cpp-python v0.4.1 Documentation v0.4.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=33ce4c6d"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="acl_cpp.string" href="string.html" />
+    <link rel="prev" title="acl-cpp-python" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            acl-cpp-python v0.4.1 Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">acl_cpp.fenwicktree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fenwicktree-fenwick-tree">fenwicktree.fenwick_tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add">add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sum">sum</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">acl_cpp.string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">acl_cpp.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convolution.html">acl_cpp.convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsu.html">acl_cpp.dsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxflow.html">acl_cpp.maxflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mincostflow.html">acl_cpp.mincostflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scc.html">acl_cpp.scc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twosat.html">acl_cpp.twosat</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acl-cpp-python v0.4.1 Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">acl_cpp.fenwicktree</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fenwicktree.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acl-cpp-fenwicktree">
+<h1>acl_cpp.fenwicktree<a class="headerlink" href="#acl-cpp-fenwicktree" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atcoder.github.io/ac-library/production/document_en/fenwicktree.html">C++ version documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/fenwicktree.cpp">Source code</a></p></li>
+</ul>
+<section id="fenwicktree-fenwick-tree">
+<h2>fenwicktree.fenwick_tree<a class="headerlink" href="#fenwicktree-fenwick-tree" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># fenwick_tree&lt;ll&gt;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.fenwicktree</span><span class="w"> </span><span class="kn">import</span> <span class="n">fenwick_tree</span>
+</pre></div>
+</div>
+<p>Given an array of length <span class="math notranslate nohighlight">\(n\)</span>, processes the following queries in <span class="math notranslate nohighlight">\(O(\log n)\)</span> time.</p>
+<ul class="simple">
+<li><p>Updating an element</p></li>
+<li><p>Calculating the sum of the elements of an interval</p></li>
+</ul>
+<p><span></span></p>
+<section id="id1">
+<h3>Constructor<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># fenwick_tree::fenwick_tree(int n)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fenwick_tree</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">fenwick_tree</span>
+</pre></div>
+</div>
+<p>Creates an array <span class="math notranslate nohighlight">\(a_0, a_1, \dots, a_{n-1}\)</span> of length <span class="math notranslate nohighlight">\(n\)</span>. All elements are initialized to <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \leq n &lt; 2^{31}\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+<section id="add">
+<h3>add<a class="headerlink" href="#add" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># void fenwick_tree::add(int p, ll x)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fenwick_tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Performs <code class="docutils literal notranslate"><span class="pre">a[p]</span> <span class="pre">+=</span> <span class="pre">x</span></code>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \leq p &lt; n\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(\log n)\)</span></p></li>
+</ul>
+</section>
+<section id="sum">
+<h3>sum<a class="headerlink" href="#sum" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ll fenwick_tree::sum(int l, int r)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fenwick_tree</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">a[l]</span> <span class="pre">+</span> <span class="pre">a[l</span> <span class="pre">+</span> <span class="pre">1]</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">a[r</span> <span class="pre">-</span> <span class="pre">1]</span></code>. If the answer does not fit in a <strong>64-bit signed integer</strong>, returns the value equal to the answer mod <span class="math notranslate nohighlight">\(2^{64}\)</span>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \leq l \leq r \leq n\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(\log n)\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>Examples<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>AC code of <a class="reference external" href="https://atcoder.jp/contests/practice2/tasks/practice2_b">https://atcoder.jp/contests/practice2/tasks/practice2_b</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.fenwicktree</span><span class="w"> </span><span class="kn">import</span> <span class="n">fenwick_tree</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+<span class="n">fw</span> <span class="o">=</span> <span class="n">fenwick_tree</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">fw</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">fw</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="acl-cpp-python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="string.html" class="btn btn-neutral float-right" title="acl_cpp.string" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC0 1.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

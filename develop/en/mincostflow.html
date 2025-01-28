@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>acl_cpp.mincostflow &mdash; acl-cpp-python v0.4.1 Documentation v0.4.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=33ce4c6d"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="acl_cpp.scc" href="scc.html" />
+    <link rel="prev" title="acl_cpp.maxflow" href="maxflow.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            acl-cpp-python v0.4.1 Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fenwicktree.html">acl_cpp.fenwicktree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">acl_cpp.string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">acl_cpp.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convolution.html">acl_cpp.convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsu.html">acl_cpp.dsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxflow.html">acl_cpp.maxflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">acl_cpp.mincostflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mincostflow-mcf-graph">mincostflow.mcf_graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-graph-add-edge">mcf_graph.add_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-graph-flow">mcf_graph.flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-graph-slope">mcf_graph.slope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-graph-edge">mcf_graph.edge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Constructor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-graph-get-edge">mcf_graph.get_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-graph-edges">mcf_graph.edges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scc.html">acl_cpp.scc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twosat.html">acl_cpp.twosat</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acl-cpp-python v0.4.1 Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">acl_cpp.mincostflow</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/mincostflow.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acl-cpp-mincostflow">
+<h1>acl_cpp.mincostflow<a class="headerlink" href="#acl-cpp-mincostflow" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atcoder.github.io/ac-library/production/document_en/mincostflow.html">C++ version documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/mincostflow.cpp">Source code</a></p></li>
+</ul>
+<section id="mincostflow-mcf-graph">
+<h2>mincostflow.mcf_graph<a class="headerlink" href="#mincostflow-mcf-graph" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mcf_graph&lt;ll, ll&gt;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.mincostflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">mcf_graph</span>
+</pre></div>
+</div>
+<p>This is a library to solve the <a class="reference external" href="https://en.wikipedia.org/wiki/Minimum-cost-flow_problem">minimum cost flow problem</a>.</p>
+<section id="id1">
+<h3>Constructor<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mcf_graph::mcf_graph(int n)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mcf_graph</span>
+</pre></div>
+</div>
+<p>Creates a graph with <span class="math notranslate nohighlight">\(n\)</span> vertices and <span class="math notranslate nohighlight">\(0\)</span> edges.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le n &lt; 2^{31}\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+<section id="mcf-graph-add-edge">
+<h3>mcf_graph.add_edge<a class="headerlink" href="#mcf-graph-add-edge" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># int mcf_graph::add_edge(int from, int to, ll cap, ll cost)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">from_</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cap</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cost</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<p>Adds an edge from vertex <span class="math notranslate nohighlight">\(\mathit{from\_}\)</span> to vertex <span class="math notranslate nohighlight">\(\mathit{to}\)</span> with maximum capacity <span class="math notranslate nohighlight">\(\mathit{cap}\)</span>, cost <span class="math notranslate nohighlight">\(\mathit{cost}\)</span>, and flow <span class="math notranslate nohighlight">\(0\)</span>. Returns the index of the added edge (0-origin).</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{from\_} &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{to} &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{cap}, \mathit{cost} &lt; 2^{63}\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p>Amortized <span class="math notranslate nohighlight">\(O(1)\)</span></p></li>
+</ul>
+</section>
+<section id="mcf-graph-flow">
+<h3>mcf_graph.flow<a class="headerlink" href="#mcf-graph-flow" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) pair&lt;ll, ll&gt; mcf_graph::flow(int s, int t)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+
+<span class="c1"># (2) pair&lt;ll, ll&gt; mcf_graph::flow(int s, int t, ll flow_limit)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flow_limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>(1) Equivalent to <code class="docutils literal notranslate"><span class="pre">flow(s,</span> <span class="pre">t,</span> <span class="pre">(1</span> <span class="pre">&lt;&lt;</span> <span class="pre">63)</span> <span class="pre">-</span> <span class="pre">1)</span></code>.</p></li>
+<li><p>(2) Sends flow from vertex <span class="math notranslate nohighlight">\(s\)</span> to vertex <span class="math notranslate nohighlight">\(t\)</span> until the flow limit is reached or no more flow can be sent. Returns the amount of flow sent and the minimum cost to send that flow.</p></li>
+</ul>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p>Same as <code class="docutils literal notranslate"><span class="pre">slope</span></code>.</p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p>Same as <code class="docutils literal notranslate"><span class="pre">slope</span></code>.</p></li>
+</ul>
+</section>
+<section id="mcf-graph-slope">
+<h3>mcf_graph.slope<a class="headerlink" href="#mcf-graph-slope" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) vector&lt;pair&lt;ll, ll&gt;&gt; mcf_graph::slope(int s, int t)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">slope</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>
+
+<span class="c1"># (2) vector&lt;pair&lt;ll, ll&gt;&gt; mcf_graph::slope(int s, int t, ll flow_limit)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">slope</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flow_limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>(1) Equivalent to <code class="docutils literal notranslate"><span class="pre">slope(s,</span> <span class="pre">t,</span> <span class="pre">(1</span> <span class="pre">&lt;&lt;</span> <span class="pre">63)</span> <span class="pre">-</span> <span class="pre">1)</span></code>.</p>
+<p>(2) The minimum cost for the flow is a polyline (piecewise linear function) that is non-decreasing and convex. Returns the vertices of this polyline.</p>
+<p>Specifically, returns the sequence of <span class="math notranslate nohighlight">\((x, g(x))\)</span> such that <span class="math notranslate nohighlight">\(g(x)\)</span> is the minimum cost for flow <span class="math notranslate nohighlight">\(x\)</span>, satisfying the following conditions:</p>
+<ul class="simple">
+<li><p>The first point of the return value is <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> in the return value is strictly increasing, and <span class="math notranslate nohighlight">\(g(x)\)</span> is non-decreasing.</p></li>
+<li><p>The last point of the return value is <span class="math notranslate nohighlight">\((y, g(y))\)</span>, where <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">flow(s,</span> <span class="pre">t,</span> <span class="pre">flow_limit)[0]</span></code>.</p></li>
+<li><p>The slope of <span class="math notranslate nohighlight">\(g(x)\)</span> increases at the intermediate points of the return value (i.e., it does not contain three points on the same line).</p></li>
+<li><p>The polyline connecting the points of the return value represents the graph of <span class="math notranslate nohighlight">\(g(x)\ (0 \le x \le \text{flow_limit})\)</span>.</p></li>
+</ul>
+<p>If <span class="math notranslate nohighlight">\(g(x)\)</span> does not fit in a <strong>64-bit signed integer</strong>, it should return the value modulo <span class="math notranslate nohighlight">\(2^{64}\)</span>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s \neq t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \leq s, t \lt n\)</span></p></li>
+<li><p><span style="color: red">Behavior is undefined when <code class="docutils literal notranslate"><span class="pre">slope</span></code> or <code class="docutils literal notranslate"><span class="pre">flow</span></code> are called multiple times together.</span></p></li>
+<li><p><span style="color: red">Let <span class="math notranslate nohighlight">\(x\)</span> be the maximum cost of an edge, then <span class="math notranslate nohighlight">\(n \cdot x \leq 8 \times 10^{18} + 1000\)</span>.</span></p>
+<ul>
+<li><p><span style="color: red">More precisely, (the maximum cost of a simple path)<span class="math notranslate nohighlight">\({}\leq 8 \times 10^{18} + 1000\)</span>.</span></p></li>
+<li><p>Behavior is undefined if this is not satisfied.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Complexity</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(F\)</span> be the flow and <span class="math notranslate nohighlight">\(m\)</span> be the number of edges added.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(F (n + m) \log (n + m))\)</span></p></li>
+</ul>
+</section>
+<section id="mcf-graph-edge">
+<h3>mcf_graph.edge<a class="headerlink" href="#mcf-graph-edge" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>This is a class representing an edge in the mcf_graph. It consists of read-only variables <code class="docutils literal notranslate"><span class="pre">from_</span></code>, <code class="docutils literal notranslate"><span class="pre">to</span></code>, <code class="docutils literal notranslate"><span class="pre">cap</span></code>, <code class="docutils literal notranslate"><span class="pre">flow</span></code>, and <code class="docutils literal notranslate"><span class="pre">cost</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cap</span></code> represents the maximum capacity, and <code class="docutils literal notranslate"><span class="pre">flow</span></code> represents the current flow.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span></code> is a reserved word, so it is named <code class="docutils literal notranslate"><span class="pre">from_</span></code>.</p></li>
+</ul>
+<section id="id2">
+<h4>Constructor<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mcf_graph::edge::edge(int from, int to, ll cap, ll flow, ll cost)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="n">from_</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cap</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cost</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mcf_graph</span><span class="o">.</span><span class="n">edge</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mcf-graph-get-edge">
+<h3>mcf_graph.get_edge<a class="headerlink" href="#mcf-graph-get-edge" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mcf_graph.edge mcf_graph::get_edge(int i)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mcf_graph</span><span class="o">.</span><span class="n">edge</span>
+</pre></div>
+</div>
+<p>Returns the current state of the <span class="math notranslate nohighlight">\(i\)</span>-th added edge.</p>
+<p><strong>Constraints</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(m\)</span> be the number of edges added so far.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le i &lt; m\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(1)\)</span></p></li>
+</ul>
+</section>
+<section id="mcf-graph-edges">
+<h3>mcf_graph.edges<a class="headerlink" href="#mcf-graph-edges" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector&lt;mcf_graph::edge&gt; mcf_graph::edges()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mcf_graph</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">mcf_graph</span><span class="o">.</span><span class="n">edge</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Returns the current state of all edges. The edges are ordered by the order they were added.</p>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(m)\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>Examples<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>AC code of <a class="reference external" href="https://atcoder.jp/contests/practice2/tasks/practice2_e">https://atcoder.jp/contests/practice2/tasks/practice2_e</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.mincostflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">mcf_graph</span>
+
+<span class="n">BIG</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
+<span class="n">N</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+<span class="c1"># generate (s -&gt; row -&gt; column -&gt; t) graph</span>
+<span class="c1"># i-th row correspond to vertex i</span>
+<span class="c1"># i-th col correspond to vertex n + i</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">mcf_graph</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">N</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">N</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># we can &quot;waste&quot; the flow</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">K</span><span class="p">,</span> <span class="n">BIG</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">BIG</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">K</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BIG</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">-</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="p">[</span><span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">from_</span> <span class="o">==</span> <span class="n">s</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">to</span> <span class="o">==</span> <span class="n">t</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">flow</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">grid</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">from_</span><span class="p">][</span><span class="n">e</span><span class="o">.</span><span class="n">to</span> <span class="o">-</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="maxflow.html" class="btn btn-neutral float-left" title="acl_cpp.maxflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scc.html" class="btn btn-neutral float-right" title="acl_cpp.scc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC0 1.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

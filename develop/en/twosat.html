@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>acl_cpp.twosat &mdash; acl-cpp-python v0.4.1 Documentation v0.4.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=33ce4c6d"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="acl_cpp.scc" href="scc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            acl-cpp-python v0.4.1 Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fenwicktree.html">acl_cpp.fenwicktree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">acl_cpp.string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">acl_cpp.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convolution.html">acl_cpp.convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsu.html">acl_cpp.dsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxflow.html">acl_cpp.maxflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mincostflow.html">acl_cpp.mincostflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scc.html">acl_cpp.scc</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">acl_cpp.twosat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#twosat-two-sat">twosat.two_sat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#two-sat-add-clause">two_sat.add_clause</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#two-sat-satisfiable">two_sat.satisfiable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#two-sat-answer">two_sat.answer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acl-cpp-python v0.4.1 Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">acl_cpp.twosat</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/twosat.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acl-cpp-twosat">
+<h1>acl_cpp.twosat<a class="headerlink" href="#acl-cpp-twosat" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atcoder.github.io/ac-library/production/document_en/twosat.html">C++ version documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/twosat.cpp">Source code</a></p></li>
+</ul>
+<section id="twosat-two-sat">
+<h2>twosat.two_sat<a class="headerlink" href="#twosat-two-sat" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># two_sat</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.twosat</span><span class="w"> </span><span class="kn">import</span> <span class="n">two_sat</span>
+</pre></div>
+</div>
+<p>Solves the 2-SAT problem. For variables <span class="math notranslate nohighlight">\(x_0, x_1, \cdots, x_{n - 1}\)</span> and clauses with form</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((x_i = f) \lor (x_j = g)\)</span>,</p></li>
+</ul>
+<p>decides whether there is a truth assignment that satisfies all clauses.</p>
+<section id="id1">
+<h3>Constructor<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># two_sat::two_sat(int n)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">two_sat</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">two_sat</span>
+</pre></div>
+</div>
+<p>Creates a 2-SAT instance with <span class="math notranslate nohighlight">\(n\)</span> variables.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le n &lt; 2^{31}\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+<section id="two-sat-add-clause">
+<h3>two_sat.add_clause<a class="headerlink" href="#two-sat-add-clause" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># void two_sat::add_clause(int i, bool f, int j, bool g)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">two_sat</span><span class="o">.</span><span class="n">add_clause</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Adds a clause <span class="math notranslate nohighlight">\((x_i = f) \lor (x_j = g)\)</span>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le i &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le j &lt; n\)</span></p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p>Amortized <span class="math notranslate nohighlight">\(O(1)\)</span></p></li>
+</ul>
+</section>
+<section id="two-sat-satisfiable">
+<h3>two_sat.satisfiable<a class="headerlink" href="#two-sat-satisfiable" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bool two_sat::satisfiable()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">two_sat</span><span class="o">.</span><span class="n">satisfiable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+<p>Determines if there is an assignment that satisfies all the clauses. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if such an assignment exists, otherwise returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p>Can be called multiple times.</p></li>
+</ul>
+<p><strong>Complexity</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(m\)</span> be the number of added constraints.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n + m)\)</span></p></li>
+</ul>
+</section>
+<section id="two-sat-answer">
+<h3>two_sat.answer<a class="headerlink" href="#two-sat-answer" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector&lt;bool&gt; two_sat::answer()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">two_sat</span><span class="o">.</span><span class="n">answer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Returns the assignment that satisfies all the clauses from the last call to <code class="docutils literal notranslate"><span class="pre">satisfiable</span></code>.</p>
+<p><strong>Constraints</strong></p>
+<ul class="simple">
+<li><p><span style="color: red;">Call this function after <code class="docutils literal notranslate"><span class="pre">two_sat.satisfiable()</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</span></p>
+<ul>
+<li><p>If called before <code class="docutils literal notranslate"><span class="pre">satisfiable</span></code> or when <code class="docutils literal notranslate"><span class="pre">satisfiable</span></code> returned <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns a list of length <span class="math notranslate nohighlight">\(n\)</span> with undefined content.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Complexity</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>Examples<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>AC code of <a class="reference external" href="https://atcoder.jp/contests/practice2/tasks/practice2_h">https://atcoder.jp/contests/practice2/tasks/practice2_h</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.twosat</span><span class="w"> </span><span class="kn">import</span> <span class="n">two_sat</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)))</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">two_sat</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">:</span>
+            <span class="n">ts</span><span class="o">.</span><span class="n">add_clause</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">:</span>
+            <span class="n">ts</span><span class="o">.</span><span class="n">add_clause</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">:</span>
+            <span class="n">ts</span><span class="o">.</span><span class="n">add_clause</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">:</span>
+            <span class="n">ts</span><span class="o">.</span><span class="n">add_clause</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">ts</span><span class="o">.</span><span class="n">satisfiable</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No&quot;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes&quot;</span><span class="p">)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">answer</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">else</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scc.html" class="btn btn-neutral float-left" title="acl_cpp.scc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC0 1.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
