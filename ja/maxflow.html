@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>acl_cpp.maxflow &mdash; acl-cpp-python v0.5.0 ドキュメント v0.5.0 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7f793983"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="acl_cpp.mincostflow" href="mincostflow.html" />
+    <link rel="prev" title="acl_cpp.dsu" href="dsu.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            acl-cpp-python v0.5.0 ドキュメント
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fenwicktree.html">acl_cpp.fenwicktree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">acl_cpp.string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">acl_cpp.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convolution.html">acl_cpp.convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsu.html">acl_cpp.dsu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">acl_cpp.maxflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#maxflow-mf-graph">maxflow.mf_graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">コンストラクタ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-add-edge">mf_graph.add_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-flow">mf_graph.flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-min-cut">mf_graph.min_cut</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-edge">mf_graph.edge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">コンストラクタ</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-get-edge">mf_graph.get_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-edges">mf_graph.edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mf-graph-change-edge">mf_graph.change_edge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">使用例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mincostflow.html">acl_cpp.mincostflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scc.html">acl_cpp.scc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twosat.html">acl_cpp.twosat</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acl-cpp-python v0.5.0 ドキュメント</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">acl_cpp.maxflow</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/maxflow.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acl-cpp-maxflow">
+<h1>acl_cpp.maxflow<a class="headerlink" href="#acl-cpp-maxflow" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atcoder.github.io/ac-library/production/document_ja/maxflow.html">C++ 版のドキュメント</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/maxflow.cpp">ソースコード</a></p></li>
+</ul>
+<section id="maxflow-mf-graph">
+<h2>maxflow.mf_graph<a class="headerlink" href="#maxflow-mf-graph" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mf_graph&lt;ll&gt;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.maxflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">mf_graph</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://ja.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E3%83%95%E3%83%AD%E3%83%BC%E5%95%8F%E9%A1%8C">最大フロー問題</a> を解くライブラリです。</p>
+<section id="id1">
+<h3>コンストラクタ<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mf_graph::mf_graph(int n)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mf_graph</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(n\)</span> 頂点 <span class="math notranslate nohighlight">\(0\)</span> 辺のグラフを作ります。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le n &lt; 2^{31}\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span></p></li>
+</ul>
+</section>
+<section id="mf-graph-add-edge">
+<h3>mf_graph.add_edge<a class="headerlink" href="#mf-graph-add-edge" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># int mf_graph::add_edge(int from, int to, ll cap)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">from_</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cap</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<p>頂点 <span class="math notranslate nohighlight">\(\mathit{from\_}\)</span> から頂点 <span class="math notranslate nohighlight">\(\mathit{to}\)</span> へ最大容量 <span class="math notranslate nohighlight">\(\mathit{cap}\)</span> 流量 <span class="math notranslate nohighlight">\(0\)</span> の辺を追加します。何番目に追加された辺かを返します (0-origin) 。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{from\_} &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{to} &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{cap} &lt; 2^{63}\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p>ならし <span class="math notranslate nohighlight">\(O(1)\)</span></p></li>
+</ul>
+</section>
+<section id="mf-graph-flow">
+<h3>mf_graph.flow<a class="headerlink" href="#mf-graph-flow" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1) ll mf_graph::flow(int s, int t)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+
+<span class="c1"># (2) ll mf_graph::flow(int s, int t, ll flow_limit)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flow_limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>(1) <code class="docutils literal notranslate"><span class="pre">flow(s,</span> <span class="pre">t,</span> <span class="pre">(1</span> <span class="pre">&lt;&lt;</span> <span class="pre">63)</span> <span class="pre">-</span> <span class="pre">1)</span></code> と等価です。</p></li>
+<li><p>(2) 頂点 <span class="math notranslate nohighlight">\(s\)</span> から頂点 <span class="math notranslate nohighlight">\(t\)</span> へ流量 <span class="math notranslate nohighlight">\(\mathit{flow\_limit}\)</span> に達するまで流せる限り流し、流せた量を返します。</p></li>
+<li><p>複数回呼ぶことも可能です。詳細な挙動は <a class="reference external" href="https://atcoder.github.io/ac-library/production/document_ja/appendix.html">Appendix</a> を参照してください。</p></li>
+</ul>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le s &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le t &lt; n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s \neq t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{flow\_limit} &lt; 2^{63}\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<p><span class="math notranslate nohighlight">\(m\)</span> を追加された辺数として</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O((n + m) \sqrt{m})\)</span> (辺の容量がすべて <span class="math notranslate nohighlight">\(1\)</span> のとき)</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n^2 m)\)</span></p></li>
+<li><p>返り値を <span class="math notranslate nohighlight">\(F\)</span> として <span class="math notranslate nohighlight">\(O(F(n + m))\)</span></p></li>
+<li><p>参考文献: <a class="reference external" href="https://misawa.github.io/others/flow/dinic_time_complexity.html">Dinic 法とその計算量</a></p></li>
+</ul>
+</section>
+<section id="mf-graph-min-cut">
+<h3>mf_graph.min_cut<a class="headerlink" href="#mf-graph-min-cut" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector&lt;bool&gt; mf_graph::min_cut(int s)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">min_cut</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>以下で定める長さ <span class="math notranslate nohighlight">\(n\)</span> の bool の配列 <code class="docutils literal notranslate"><span class="pre">cut</span></code> を返します。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cut[i]</span></code> は、現在の残余グラフにおいて、頂点 <span class="math notranslate nohighlight">\(s\)</span> から頂点 <span class="math notranslate nohighlight">\(i\)</span> へ到達可能かどうか</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">flow(s,</span> <span class="pre">t)</span></code> をちょうど <span class="math notranslate nohighlight">\(1\)</span> 回呼んだ後に <code class="docutils literal notranslate"><span class="pre">min_cut(s)</span></code> を呼ぶと、返り値は <span class="math notranslate nohighlight">\(s\)</span>-<span class="math notranslate nohighlight">\(t\)</span> 間の最小カットに対応します。詳細な挙動は <a class="reference external" href="https://atcoder.github.io/ac-library/production/document_ja/appendix.html">Appendix</a> を参照してください。</p>
+</section>
+<section id="mf-graph-edge">
+<h3>mf_graph.edge<a class="headerlink" href="#mf-graph-edge" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>mf_graph 上の辺を表す class です。read-only な変数 <code class="docutils literal notranslate"><span class="pre">from_</span></code>, <code class="docutils literal notranslate"><span class="pre">to</span></code>, <code class="docutils literal notranslate"><span class="pre">cap</span></code>, <code class="docutils literal notranslate"><span class="pre">flow</span></code> からなります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cap</span></code> は最大容量、<code class="docutils literal notranslate"><span class="pre">flow</span></code> は現在の流量を表します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span></code> は予約語なので <code class="docutils literal notranslate"><span class="pre">from_</span></code> としています。</p></li>
+</ul>
+<section id="id2">
+<h4>コンストラクタ<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mf_graph::edge::edge(int from, int to, ll cap, ll flow)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="n">from_</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cap</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mf_graph</span><span class="o">.</span><span class="n">edge</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mf-graph-get-edge">
+<h3>mf_graph.get_edge<a class="headerlink" href="#mf-graph-get-edge" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mf_graph::edge mf_graph::get_edge(int i)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mf_graph</span><span class="o">.</span><span class="n">edge</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(i\)</span> 番目に追加された辺の現在の状態を返します。</p>
+<p><strong>制約</strong></p>
+<p><span class="math notranslate nohighlight">\(m\)</span> をこれまでに追加された辺の数として</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le i &lt; m\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(1)\)</span></p></li>
+</ul>
+</section>
+<section id="mf-graph-edges">
+<h3>mf_graph.edges<a class="headerlink" href="#mf-graph-edges" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vector&lt;mf_graph::edge&gt; mf_graph::edges()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">mf_graph</span><span class="o">.</span><span class="n">edge</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>すべての辺の現在の状態を返します。辺は追加された順に並びます。</p>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(m)\)</span></p></li>
+</ul>
+</section>
+<section id="mf-graph-change-edge">
+<h3>mf_graph.change_edge<a class="headerlink" href="#mf-graph-change-edge" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># void mf_graph::change_edge(int i, ll new_cap, ll new_flow)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mf_graph</span><span class="o">.</span><span class="n">change_edge</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_cap</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_flow</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(i\)</span> 番目 (0-origin) に追加された辺の最大容量を <span class="math notranslate nohighlight">\(\mathit{new\_cap}\)</span> 、流量を <span class="math notranslate nohighlight">\(\mathit{new\_flow}\)</span> に変更します。詳細は <a class="reference external" href="https://atcoder.github.io/ac-library/production/document_ja/appendix.html">Appendix</a> を参照してください。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le i &lt; m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathit{new\_flow} \le \mathit{new\_cap} &lt; 2^{63}\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>使用例<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>AC code of <a class="reference external" href="https://atcoder.jp/contests/practice2/tasks/practice2_d">https://atcoder.jp/contests/practice2/tasks/practice2_d</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.maxflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">mf_graph</span>
+<span class="n">HASH</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
+<span class="n">DOT</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="p">[</span><span class="nb">bytearray</span><span class="p">(</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">N</span> <span class="o">*</span> <span class="n">M</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">mf_graph</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">M</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># s -&gt; even / odd -&gt; t</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">HASH</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">M</span> <span class="o">+</span> <span class="n">j</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># even -&gt; odd</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">HASH</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">v0</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">M</span> <span class="o">+</span> <span class="n">j</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">DOT</span><span class="p">:</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">M</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="ow">and</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">DOT</span><span class="p">:</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">+</span> <span class="n">M</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">DOT</span><span class="p">:</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">M</span> <span class="ow">and</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">DOT</span><span class="p">:</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">from_</span> <span class="o">==</span> <span class="n">s</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">to</span> <span class="o">==</span> <span class="n">t</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">flow</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">i0</span><span class="p">,</span> <span class="n">j0</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">from_</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+    <span class="n">i1</span><span class="p">,</span> <span class="n">j1</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">to</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">i0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">i1</span><span class="p">:</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i0</span><span class="p">][</span><span class="n">j0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i1</span><span class="p">][</span><span class="n">j1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">i1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">i0</span><span class="p">:</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i1</span><span class="p">][</span><span class="n">j1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i0</span><span class="p">][</span><span class="n">j0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">j0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">j1</span><span class="p">:</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i0</span><span class="p">][</span><span class="n">j0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">)</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i1</span><span class="p">][</span><span class="n">j1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i1</span><span class="p">][</span><span class="n">j1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">)</span>
+        <span class="n">grid</span><span class="p">[</span><span class="n">i0</span><span class="p">][</span><span class="n">j0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dsu.html" class="btn btn-neutral float-left" title="acl_cpp.dsu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mincostflow.html" class="btn btn-neutral float-right" title="acl_cpp.mincostflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC0 1.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

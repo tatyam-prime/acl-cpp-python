@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>acl_cpp.math &mdash; acl-cpp-python v0.5.0 ドキュメント v0.5.0 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7f793983"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/translations.js?v=4755f45a"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="acl_cpp.convolution" href="convolution.html" />
+    <link rel="prev" title="acl_cpp.string" href="string.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            acl-cpp-python v0.5.0 ドキュメント
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fenwicktree.html">acl_cpp.fenwicktree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="string.html">acl_cpp.string</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">acl_cpp.math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pow-mod">pow_mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inv-mod">inv_mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math-crt">math.crt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math-floor-sum">math.floor_sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math-internal">math.internal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#math-internal-is-prime">math.internal.is_prime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#math-internal-primitive-root">math.internal.primitive_root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">使用例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="convolution.html">acl_cpp.convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsu.html">acl_cpp.dsu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxflow.html">acl_cpp.maxflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mincostflow.html">acl_cpp.mincostflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scc.html">acl_cpp.scc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twosat.html">acl_cpp.twosat</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">acl-cpp-python v0.5.0 ドキュメント</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">acl_cpp.math</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/math.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="acl-cpp-math">
+<h1>acl_cpp.math<a class="headerlink" href="#acl-cpp-math" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://atcoder.github.io/ac-library/production/document_ja/math.html">C++ 版のドキュメント</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/math.cpp">ソースコード</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.math</span><span class="w"> </span><span class="kn">import</span> <span class="n">crt</span><span class="p">,</span> <span class="n">floor_sum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.math.internal</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_prime</span><span class="p">,</span> <span class="n">primitive_root</span>
+</pre></div>
+</div>
+<section id="pow-mod">
+<h2>pow_mod<a class="headerlink" href="#pow-mod" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pow(x,</span> <span class="pre">n,</span> <span class="pre">mod)</span></code> を使用してください。</p>
+</section>
+<section id="inv-mod">
+<h2>inv_mod<a class="headerlink" href="#inv-mod" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pow(x,</span> <span class="pre">-1,</span> <span class="pre">mod)</span></code> を使用してください。</p>
+</section>
+<section id="math-crt">
+<h2>math.crt<a class="headerlink" href="#math-crt" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pair&lt;ll, ll&gt; crt(vector&lt;ll&gt; r, vector&lt;ll&gt; m)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">crt</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">m</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>同じ長さの配列 <span class="math notranslate nohighlight">\(r, m\)</span> を渡します。この配列の長さを <span class="math notranslate nohighlight">\(n\)</span> とした時、</p>
+<div class="math notranslate nohighlight">
+\[x \equiv r[i] \pmod{m[i]}, \forall i \in \lbrace 0,1,\cdots, n - 1 \rbrace\]</div>
+<p>を解きます。答えは(存在するならば) <span class="math notranslate nohighlight">\(y, z (0 \leq y &lt; z = \mathrm{lcm}(m[i]))\)</span> を用いて <span class="math notranslate nohighlight">\(x \equiv y \pmod z\)</span> の形で書けることが知られており、この <span class="math notranslate nohighlight">\((y, z)\)</span> をpairとして返します。答えがない場合は <span class="math notranslate nohighlight">\((0, 0)\)</span> を返します。<span class="math notranslate nohighlight">\(n=0\)</span> の時は <span class="math notranslate nohighlight">\((0, 1)\)</span> を返します。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{len}(r) = \text{len}(m)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-2^{63} \le r[i] &lt; 2^{63}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 \le m[i] &lt; 2^{63}\)</span></p></li>
+<li><p><span style="color: red;"><span class="math notranslate nohighlight">\(\mathrm{lcm}(m[i]) &lt; 2^{63}\)</span></span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\mathrm{lcm}(m[i]) &lt; 2^{63}\)</span> を満たさない場合の動作は未定義です。</p>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n \log \mathrm{lcm}(m[i]))\)</span></p></li>
+</ul>
+</section>
+<section id="math-floor-sum">
+<h2>math.floor_sum<a class="headerlink" href="#math-floor-sum" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ll floor_sum(ll n, ll m, ll a, ll b)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">floor_sum</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<p><span></span></p>
+<div class="math notranslate nohighlight">
+\[\sum_{i = 0}^{n - 1} \left\lfloor \frac{a \times i + b}{m} \right\rfloor\]</div>
+<p>を返します。答えが <strong>64 bit 符号付き整数型</strong>に収まらない場合、mod <span class="math notranslate nohighlight">\(2^{64}\)</span> で等しい値を返します。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le n \lt 2^{32}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 \le m \lt 2^{32}\)</span></p></li>
+</ul>
+<p><strong>計算量</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(\log m)\)</span></p></li>
+</ul>
+</section>
+<section id="math-internal">
+<h2>math.internal<a class="headerlink" href="#math-internal" title="Link to this heading"></a></h2>
+<section id="math-internal-is-prime">
+<h3>math.internal.is_prime<a class="headerlink" href="#math-internal-is-prime" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bool is_prime_constexpr(int n)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(n\)</span> が素数かどうかを返す。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le n &lt; 2^{31}\)</span></p></li>
+</ul>
+</section>
+<section id="math-internal-primitive-root">
+<h3>math.internal.primitive_root<a class="headerlink" href="#math-internal-primitive-root" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># int primitive_root_constexpr(int m)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">primitive_root</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<p>mod <span class="math notranslate nohighlight">\(m\)</span> における原始根の <span class="math notranslate nohighlight">\(1\)</span> つを返す。</p>
+<p><strong>制約</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2 \le m &lt; 2^{31}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> は素数</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>使用例<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>AC code of <a class="reference external" href="https://atcoder.jp/contests/practice2/tasks/practice2_c">https://atcoder.jp/contests/practice2/tasks/practice2_c</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.math</span><span class="w"> </span><span class="kn">import</span> <span class="n">floor_sum</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">floor_sum</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="string.html" class="btn btn-neutral float-left" title="acl_cpp.string" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="convolution.html" class="btn btn-neutral float-right" title="acl_cpp.convolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC0 1.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
