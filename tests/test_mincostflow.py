@@ -17,9 +17,9 @@ def test_math():
     e = mcf_graph.edge(0, 1, 1, 0, 1)
 
     assert g.flow(0, 1) == (1, 1)
-    g.flow(0, 1, 2)
-    g.slope(0, 1)
-    g.slope(0, 1, 2)
+    assert g.flow(1, 0, 2) == (1, -1)
+    assert g.slope(0, 1) == [(0, 0), (1, 1)]
+    g.slope(1, 0, 2)
 
     with pytest.raises(ValueError):
         mcf_graph(-1)
