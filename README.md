@@ -6,5 +6,5 @@
 
 Documentation: [日本語](https://tatyam-prime.github.io/acl-cpp-python/ja/) | [English](https://tatyam-prime.github.io/acl-cpp-python/en/)
 
-[acl-cpp-python](https://github.com/atcoder/ac-library) is a package that binds the [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) implemented in C++ to Python.
+[acl-cpp-python](https://github.com/tatyam-prime/acl-cpp-python/) is a package that binds the [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) implemented in C++ to Python.
 Internally, it is implemented in C++, so you can use fast convolutions, flows, string algorithms, etc. from Python.
