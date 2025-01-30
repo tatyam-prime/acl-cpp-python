@@ -3,8 +3,6 @@
 #include <nanobind/stl/vector.h>
 #include "string.hpp"
 
-namespace nb = nanobind;
-
 NB_MODULE(string, m) {
     m.def("suffix_array", static_cast<std::vector<int> (*)(const std::string&)>(&atcoder::suffix_array));
     m.def("suffix_array", static_cast<std::vector<int> (*)(const std::vector<long long>&)>(&atcoder::suffix_array));
