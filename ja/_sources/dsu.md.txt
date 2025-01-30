@@ -25,7 +25,7 @@ from acl_cpp.dsu import dsu
 
 ```python
 # dsu::dsu(int n)
-def dsu(n: int) -> dsu
+def dsu(n: int = 0) -> dsu
 ```
 
 - $n$ 頂点 $0$ 辺の無向グラフを作ります。
