@@ -5,7 +5,6 @@
 
 ```python
 from acl_cpp.math import crt, floor_sum
-from acl_cpp.math.internal import is_prime, primitive_root
 ```
 
 ## pow_mod
@@ -64,9 +63,15 @@ $$\sum_{i = 0}^{n - 1} \left\lfloor \frac{a \times i + b}{m} \right\rfloor$$
 
 - $O(\log m)$
 
-## math.internal
+## internal.math
 
-### math.internal.is_prime
+- [ソースコード](https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/internal_math.cpp)
+
+```python
+from acl_cpp.internal.math import is_prime, primitive_root
+```
+
+### internal.math.is_prime
 
 ```python
 # bool is_prime_constexpr(int n)
@@ -79,7 +84,7 @@ $n$ が素数かどうかを返す。
 
 - $0 \le n < 2^{31}$
 
-### math.internal.primitive_root
+### internal.math.primitive_root
 
 ```python
 # int primitive_root_constexpr(int m)
