@@ -16,7 +16,7 @@ from acl_cpp.maxflow import mf_graph
 
 ```python
 # mf_graph::mf_graph(int n)
-def mf_graph(n: int) -> mf_graph
+def mf_graph(n: int = 0) -> mf_graph
 ```
 
 $n$ 頂点 $0$ 辺のグラフを作ります。

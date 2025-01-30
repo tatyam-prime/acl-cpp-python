@@ -21,7 +21,7 @@ from acl_cpp.twosat import two_sat
 
 ```python
 # two_sat::two_sat(int n)
-def two_sat(n: int) -> two_sat
+def two_sat(n: int = 0) -> two_sat
 ```
 
 $n$ 変数の 2-SAT インスタンスを作成します。
