@@ -5,20 +5,19 @@ on:
     branches:
       - main
       - develop
-  workflow_dispatch:
+    paths:
+      - 'docs/**'
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0  # Ensure the full history is fetched
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.13'
         cache: 'pip' 
