@@ -16,7 +16,7 @@ from acl_cpp.mincostflow import mcf_graph
 
 ```python
 # mcf_graph::mcf_graph(int n)
-def mcf_graph(n: int) -> mcf_graph
+def mcf_graph(n: int = 0) -> mcf_graph
 ```
 
 $n$ 頂点 $0$ 辺のグラフを作ります。
