@@ -16,6 +16,7 @@ find_package(nanobind CONFIG REQUIRED)
 # Set optimization flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native")
 
+nanobind_add_module(convolution NOMINSIZE STABLE_ABI LTO src/convolution.cpp)
 nanobind_add_module(dsu NOMINSIZE STABLE_ABI LTO src/dsu.cpp)
 nanobind_add_module(fenwicktree NOMINSIZE STABLE_ABI LTO src/fenwicktree.cpp)
 nanobind_add_module(math NOMINSIZE STABLE_ABI LTO src/math.cpp)
@@ -24,6 +25,6 @@ nanobind_add_module(mincostflow NOMINSIZE STABLE_ABI LTO src/mincostflow.cpp)
 nanobind_add_module(scc NOMINSIZE STABLE_ABI LTO src/scc.cpp)
 nanobind_add_module(string NOMINSIZE STABLE_ABI LTO src/string.cpp)
 nanobind_add_module(twosat NOMINSIZE STABLE_ABI LTO src/twosat.cpp)
-nanobind_add_module(convolution NOMINSIZE STABLE_ABI LTO src/convolution.cpp)
 
 install(TARGETS dsu fenwicktree math maxflow mincostflow scc string twosat convolution LIBRARY DESTINATION acl_cpp)
+install(DIRECTORY src/acl_cpp/ DESTINATION acl_cpp)
