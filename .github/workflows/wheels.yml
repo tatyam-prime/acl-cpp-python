@@ -46,6 +46,7 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
+          echo 'docs/\ntests/\n.github/\n.gitignore' >> .gitignore
           python -m pip install twine build
           python -m build --sdist
           twine upload dist/*

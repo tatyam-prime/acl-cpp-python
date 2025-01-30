@@ -4,8 +4,6 @@
 #include "math.hpp"
 #include "internal_math.hpp"
 
-namespace nb = nanobind;
-
 NB_MODULE(math, m) {
     using namespace atcoder;
     m.def("crt", crt);
