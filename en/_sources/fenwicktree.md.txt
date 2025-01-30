@@ -21,7 +21,7 @@ from acl_cpp.fenwicktree import fenwick_tree
 
 ```python
 # fenwick_tree::fenwick_tree(int n)
-def fenwick_tree(n: int) -> fenwick_tree
+def fenwick_tree(n: int = 0) -> fenwick_tree
 ```
 
 長さ $n$ の整数列 $a_0, a_1, \dots, a_{n-1}$ を作ります。初期値はすべて $0$ です。

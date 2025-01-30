@@ -16,7 +16,7 @@ from acl_cpp.scc import scc_graph
 
 ```python
 # scc_graph::scc_graph(int n)
-def scc_graph(n: int) -> scc_graph
+def scc_graph(n: int = 0) -> scc_graph
 ```
 
 $n$ 頂点 $0$ 辺のグラフを作成します。

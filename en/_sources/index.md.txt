@@ -4,7 +4,7 @@
 [![PyPI: acl-cpp-python](https://img.shields.io/badge/PyPI-acl--cpp--python-006dad?logo=PyPI&logoColor=white)](https://pypi.org/project/acl-cpp-python/)
 [![AC Library: v1.5.1](https://img.shields.io/badge/AC%20Library-v1.5.1-seagreen)](https://github.com/atcoder/ac-library) [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-darkgoldenrod)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-日本語 | [English](https://tatyam-prime.github.io/acl-cpp-python/en/)
+日本語 | <a href="../en/">English</a>
 
 [acl-cpp-python](https://github.com/tatyam-prime/acl-cpp-python) は、C++ で実装された [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) を Python に bind したパッケージです。  
 内部的には C++ で実装されているので、高速な畳み込みやフロー、文字列アルゴリズムなどを Python から利用できます。
