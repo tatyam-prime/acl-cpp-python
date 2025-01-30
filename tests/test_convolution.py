@@ -1,5 +1,5 @@
 import acl_cpp.convolution as c
-import acl_cpp.convolution.internal as ci
+import acl_cpp.internal.convolution as ci
 import pytest
 
 def test_convolution():
