@@ -6,7 +6,7 @@
 
 日本語 | [English](https://tatyam-prime.github.io/acl-cpp-python/en/)
 
-[acl-cpp-python](https://github.com/atcoder/ac-library) は、C++ で実装された [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) を Python に bind したパッケージです。  
+[acl-cpp-python](https://github.com/tatyam-prime/acl-cpp-python) は、C++ で実装された [AtCoder Library (ACL)](https://github.com/atcoder/ac-library) を Python に bind したパッケージです。  
 内部的には C++ で実装されているので、高速な畳み込みやフロー、文字列アルゴリズムなどを Python から利用できます。
 
 ## インストール
