@@ -5,7 +5,6 @@
 
 ```python
 from acl_cpp.convolution import convolution998244353, convolution, convolution_ll
-from acl_cpp.convolution.internal import butterfly998244353, butterfly, butterfly_inv998244353, butterfly_inv
 ```
 
 ## convolution.convolution998244353
@@ -83,13 +82,19 @@ $n = \text{len}(a) + \text{len}(b)$ として
 
 - $O(n \log n)$
 
-## convolution.internal
+## internal.convolution
+
+- [ソースコード](https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/internal_convolution.cpp)
+
+```python
+from acl_cpp.internal.convolution import butterfly998244353, butterfly, butterfly_inv998244353, butterfly_inv
+```
 
 - 参照渡しでリストを変更することができないため、変更後のリストを返しています。
 - butterfly 関数は畳み込みや FPS (形式的冪級数) を高速化するのに有用です。
 - `butterfly_inv(butterfly(a))` すると各要素が `len(a)` 倍されるので、`len(a)` で割る必要があります。
 
-### convolution.internal.butterfly998244353
+### internal.convolution.butterfly998244353
 
 ```python
 # void butterfly<modint998244353>(vector<modint998244353> &a)
@@ -108,7 +113,7 @@ $$b[\text{bit_reverse}(i)] = \left(\sum_{j = 0}^{2^k-1}g^{ij} \cdot a[j]\right)\
 
 $0 \leq a[i] < 998244353$ を満たさない場合の動作は未定義です。
 
-### convolution.internal.butterfly998244353_inv
+### internal.convolution.butterfly998244353_inv
 
 ```python
 # void butterfly<modint998244353>(vector<modint998244353> &a)
@@ -127,7 +132,7 @@ $$b[i] = \left(\sum_{j = 0}^{2^k-1}g^{-ij} \cdot a[\text{bit_reverse}(j)]\right)
 
 $0 \leq a[i] < 998244353$ を満たさない場合の動作は未定義です。
 
-### convolution.internal.butterfly
+### internal.convolution.butterfly
 
 ```python
 # dynamic_modint version of butterfly
@@ -148,7 +153,7 @@ $$b[\text{bit_reverse}(i)] = \left(\sum_{j = 0}^{2^k-1}g^{ij} \cdot a[j]\right)\
 
 $0 \leq a[i] < p$ を満たさない場合の動作は未定義です。
 
-### convolution.internal.butterfly_inv
+### internal.convolution.butterfly_inv
 
 ```python
 # dynamic_modint version of butterfly_inv

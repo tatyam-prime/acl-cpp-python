@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>acl_cpp.math &mdash; acl-cpp-python v0.5.2 ドキュメント v0.5.2 ドキュメント</title>
+  <title>acl_cpp.math &mdash; acl-cpp-python v0.6.0 ドキュメント v0.6.0 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=ecf937f0"></script>
+      <script src="_static/documentation_options.js?v=ed06e768"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -38,7 +38,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            acl-cpp-python v0.5.2 ドキュメント
+            acl-cpp-python v0.6.0 ドキュメント
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -56,9 +56,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#inv-mod">inv_mod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#math-crt">math.crt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#math-floor-sum">math.floor_sum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#math-internal">math.internal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#math-internal-is-prime">math.internal.is_prime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#math-internal-primitive-root">math.internal.primitive_root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internal-math">internal.math</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-math-is-prime">internal.math.is_prime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-math-primitive-root">internal.math.primitive_root</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">使用例</a></li>
 </ul>
 </li>
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">acl-cpp-python v0.5.2 ドキュメント</a>
+          <a href="index.html">acl-cpp-python v0.6.0 ドキュメント</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -103,7 +103,6 @@
 <li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/math.cpp">ソースコード</a></p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.math</span><span class="w"> </span><span class="kn">import</span> <span class="n">crt</span><span class="p">,</span> <span class="n">floor_sum</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.math.internal</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_prime</span><span class="p">,</span> <span class="n">primitive_root</span>
 </pre></div>
 </div>
 <section id="pow-mod">
@@ -157,10 +156,16 @@
 <li><p><span class="math notranslate nohighlight">\(O(\log m)\)</span></p></li>
 </ul>
 </section>
-<section id="math-internal">
-<h2>math.internal<a class="headerlink" href="#math-internal" title="Link to this heading"></a></h2>
-<section id="math-internal-is-prime">
-<h3>math.internal.is_prime<a class="headerlink" href="#math-internal-is-prime" title="Link to this heading"></a></h3>
+<section id="internal-math">
+<h2>internal.math<a class="headerlink" href="#internal-math" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/internal_math.cpp">ソースコード</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.internal.math</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_prime</span><span class="p">,</span> <span class="n">primitive_root</span>
+</pre></div>
+</div>
+<section id="internal-math-is-prime">
+<h3>internal.math.is_prime<a class="headerlink" href="#internal-math-is-prime" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bool is_prime_constexpr(int n)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
 </pre></div>
@@ -171,8 +176,8 @@
 <li><p><span class="math notranslate nohighlight">\(0 \le n &lt; 2^{31}\)</span></p></li>
 </ul>
 </section>
-<section id="math-internal-primitive-root">
-<h3>math.internal.primitive_root<a class="headerlink" href="#math-internal-primitive-root" title="Link to this heading"></a></h3>
+<section id="internal-math-primitive-root">
+<h3>internal.math.primitive_root<a class="headerlink" href="#internal-math-primitive-root" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># int primitive_root_constexpr(int m)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">primitive_root</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
 </pre></div>
