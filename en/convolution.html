@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>acl_cpp.convolution &mdash; acl-cpp-python v0.5.2 Documentation v0.5.2 documentation</title>
+  <title>acl_cpp.convolution &mdash; acl-cpp-python v0.6.0 Documentation v0.6.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=75e38c5e"></script>
+      <script src="_static/documentation_options.js?v=741c5cc6"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -37,7 +37,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            acl-cpp-python v0.5.2 Documentation
+            acl-cpp-python v0.6.0 Documentation
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,11 +55,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#convolution-convolution998244353">convolution.convolution998244353</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#convolution-convolution">convolution.convolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#convolution-convolution-ll">convolution.convolution_ll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#convolution-internal">convolution.internal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#convolution-internal-butterfly998244353">convolution.internal.butterfly998244353</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#convolution-internal-butterfly998244353-inv">convolution.internal.butterfly998244353_inv</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#convolution-internal-butterfly">convolution.internal.butterfly</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#convolution-internal-butterfly-inv">convolution.internal.butterfly_inv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internal-convolution">internal.convolution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-convolution-butterfly998244353">internal.convolution.butterfly998244353</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-convolution-butterfly998244353-inv">internal.convolution.butterfly998244353_inv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-convolution-butterfly">internal.convolution.butterfly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-convolution-butterfly-inv">internal.convolution.butterfly_inv</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Examples</a></li>
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">acl-cpp-python v0.5.2 Documentation</a>
+          <a href="index.html">acl-cpp-python v0.6.0 Documentation</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -103,7 +103,6 @@
 <li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/convolution.cpp">Source code</a></p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.convolution</span><span class="w"> </span><span class="kn">import</span> <span class="n">convolution998244353</span><span class="p">,</span> <span class="n">convolution</span><span class="p">,</span> <span class="n">convolution_ll</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.convolution.internal</span><span class="w"> </span><span class="kn">import</span> <span class="n">butterfly998244353</span><span class="p">,</span> <span class="n">butterfly</span><span class="p">,</span> <span class="n">butterfly_inv998244353</span><span class="p">,</span> <span class="n">butterfly_inv</span>
 </pre></div>
 </div>
 <section id="convolution-convolution998244353">
@@ -170,15 +169,21 @@
 <li><p><span class="math notranslate nohighlight">\(O(n \log n)\)</span></p></li>
 </ul>
 </section>
-<section id="convolution-internal">
-<h2>convolution.internal<a class="headerlink" href="#convolution-internal" title="Link to this heading"></a></h2>
+<section id="internal-convolution">
+<h2>internal.convolution<a class="headerlink" href="#internal-convolution" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tatyam-prime/acl-cpp-python/blob/main/src/internal_convolution.cpp">Source code</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">acl_cpp.internal.convolution</span><span class="w"> </span><span class="kn">import</span> <span class="n">butterfly998244353</span><span class="p">,</span> <span class="n">butterfly</span><span class="p">,</span> <span class="n">butterfly_inv998244353</span><span class="p">,</span> <span class="n">butterfly_inv</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>Since lists cannot be modified by reference, the modified list is returned.</p></li>
 <li><p>The butterfly function is useful for speeding up convolutions and FPS (Formal Power Series).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">butterfly_inv(butterfly(a))</span></code> multiplies each element by <code class="docutils literal notranslate"><span class="pre">len(a)</span></code>, so you need to divide by <code class="docutils literal notranslate"><span class="pre">len(a)</span></code>.</p></li>
 </ul>
-<section id="convolution-internal-butterfly998244353">
-<h3>convolution.internal.butterfly998244353<a class="headerlink" href="#convolution-internal-butterfly998244353" title="Link to this heading"></a></h3>
+<section id="internal-convolution-butterfly998244353">
+<h3>internal.convolution.butterfly998244353<a class="headerlink" href="#internal-convolution-butterfly998244353" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># void butterfly&lt;modint998244353&gt;(vector&lt;modint998244353&gt; &amp;a)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">butterfly998244353</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </pre></div>
@@ -193,8 +198,8 @@
 </ul>
 <p>Behavior is undefined if <span class="math notranslate nohighlight">\(0 \leq a[i] &lt; 998244353\)</span> is not satisfied.</p>
 </section>
-<section id="convolution-internal-butterfly998244353-inv">
-<h3>convolution.internal.butterfly998244353_inv<a class="headerlink" href="#convolution-internal-butterfly998244353-inv" title="Link to this heading"></a></h3>
+<section id="internal-convolution-butterfly998244353-inv">
+<h3>internal.convolution.butterfly998244353_inv<a class="headerlink" href="#internal-convolution-butterfly998244353-inv" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># void butterfly&lt;modint998244353&gt;(vector&lt;modint998244353&gt; &amp;a)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">butterfly998244353_inv</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </pre></div>
@@ -209,8 +214,8 @@
 </ul>
 <p>Behavior is undefined if <span class="math notranslate nohighlight">\(0 \leq a[i] &lt; 998244353\)</span> is not satisfied.</p>
 </section>
-<section id="convolution-internal-butterfly">
-<h3>convolution.internal.butterfly<a class="headerlink" href="#convolution-internal-butterfly" title="Link to this heading"></a></h3>
+<section id="internal-convolution-butterfly">
+<h3>internal.convolution.butterfly<a class="headerlink" href="#internal-convolution-butterfly" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dynamic_modint version of butterfly</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">butterfly</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">p</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </pre></div>
@@ -227,8 +232,8 @@
 </ul>
 <p>Behavior is undefined if <span class="math notranslate nohighlight">\(0 \leq a[i] &lt; p\)</span> is not satisfied.</p>
 </section>
-<section id="convolution-internal-butterfly-inv">
-<h3>convolution.internal.butterfly_inv<a class="headerlink" href="#convolution-internal-butterfly-inv" title="Link to this heading"></a></h3>
+<section id="internal-convolution-butterfly-inv">
+<h3>internal.convolution.butterfly_inv<a class="headerlink" href="#internal-convolution-butterfly-inv" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dynamic_modint version of butterfly_inv</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">butterfly_inv</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">p</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </pre></div>
