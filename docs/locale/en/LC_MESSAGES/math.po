@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acl-cpp-python v0.4.1 Documentation 0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-28 19:03+0900\n"
+"POT-Creation-Date: 2025-01-31 04:22+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -34,150 +34,157 @@ msgstr ""
 "[Source code](https://github.com/tatyam-prime/acl-cpp-"
 "python/blob/main/src/math.cpp)"
 
-#: ../../math.md:11
+#: ../../math.md:10
 msgid "pow_mod"
 msgstr ""
 
-#: ../../math.md:13
+#: ../../math.md:12
 msgid "`pow(x, n, mod)` を使用してください。"
 msgstr "Use `pow(x, n, mod)` instead."
 
-#: ../../math.md:15
+#: ../../math.md:14
 msgid "inv_mod"
 msgstr ""
 
-#: ../../math.md:17
+#: ../../math.md:16
 msgid "`pow(x, -1, mod)` を使用してください。"
 msgstr "Use `pow(x, -1, mod)` instead."
 
-#: ../../math.md:19
+#: ../../math.md:18
 msgid "math.crt"
 msgstr ""
 
-#: ../../math.md:26
+#: ../../math.md:25
 msgid "同じ長さの配列 $r, m$ を渡します。この配列の長さを $n$ とした時、"
 msgstr ""
 "Given two arrays $r, m$ with length $n$, solves the modular equation "
 "system"
 
-#: ../../math.md:28
+#: ../../math.md:27
 msgid ""
 "x \\equiv r[i] \\pmod{m[i]}, \\forall i \\in \\lbrace 0,1,\\cdots, n - 1 "
 "\\rbrace"
 msgstr ""
 
-#: ../../math.md:30
+#: ../../math.md:29
 msgid ""
 "を解きます。答えは(存在するならば) $y, z (0 \\leq y < z = \\mathrm{lcm}(m[i]))$ を用いて $x "
 "\\equiv y \\pmod z$ の形で書けることが知られており、この $(y, z)$ をpairとして返します。答えがない場合は "
 "$(0, 0)$ を返します。$n=0$ の時は $(0, 1)$ を返します。"
 msgstr ""
-"If there is no solution, returns $(0, 0)$. Otherwise, all the "
-"solutions can be written as the form $x \\equiv y \\pmod z$ where $y, z "
-"(0 \\leq y < z = \\mathrm{lcm}(m[i]))$. Returns $(y, z)$ as a pair. If"
-" $n=0$, returns $(0, 1)$."
+"If there is no solution, returns $(0, 0)$. Otherwise, all the solutions "
+"can be written as the form $x \\equiv y \\pmod z$ where $y, z (0 \\leq y "
+"< z = \\mathrm{lcm}(m[i]))$. Returns $(y, z)$ as a pair. If $n=0$, "
+"returns $(0, 1)$."
 
-#: ../../math.md:32 ../../math.md:58 ../../math.md:78 ../../math.md:91
+#: ../../math.md:31 ../../math.md:57 ../../math.md:83 ../../math.md:96
 msgid "**制約**"
 msgstr "**Constraints**"
 
-#: ../../math.md:34
+#: ../../math.md:33
 msgid "$\\text{len}(r) = \\text{len}(m)$"
 msgstr ""
 
-#: ../../math.md:35
+#: ../../math.md:34
 msgid "$-2^{63} \\le r[i] < 2^{63}$"
 msgstr ""
 
-#: ../../math.md:36
+#: ../../math.md:35
 msgid "$1 \\le m[i] < 2^{63}$"
 msgstr ""
 
-#: ../../math.md:37
+#: ../../math.md:36
 msgid "<span style=\"color: red;\">$\\mathrm{lcm}(m[i]) < 2^{63}$</span>"
 msgstr ""
 
-#: ../../math.md:39
+#: ../../math.md:38
 msgid "$\\mathrm{lcm}(m[i]) < 2^{63}$ を満たさない場合の動作は未定義です。"
 msgstr "Behavior is undefined if $\\mathrm{lcm}(m[i]) < 2^{63}$ is not satisfied."
 
-#: ../../math.md:41 ../../math.md:63
+#: ../../math.md:40 ../../math.md:62
 msgid "**計算量**"
 msgstr "**Complexity**"
 
-#: ../../math.md:43
+#: ../../math.md:42
 msgid "$O(n \\log \\mathrm{lcm}(m[i]))$"
 msgstr ""
 
-#: ../../math.md:45
+#: ../../math.md:44
 msgid "math.floor_sum"
 msgstr ""
 
-#: ../../math.md:47
+#: ../../math.md:51
 msgid "<span></span>"
 msgstr "Returns the following sum:"
 
-#: ../../math.md:54
+#: ../../math.md:53
 msgid ""
 "\\sum_{i = 0}^{n - 1} \\left\\lfloor \\frac{a \\times i + b}{m} "
 "\\right\\rfloor"
 msgstr ""
 
-#: ../../math.md:56
+#: ../../math.md:55
 msgid "を返します。答えが **64 bit 符号付き整数型**に収まらない場合、mod $2^{64}$ で等しい値を返します。"
 msgstr ""
-"If the result does not fit in a **64-bit signed integer**, returns the"
-" value modulo $2^{64}$."
+"If the result does not fit in a **64-bit signed integer**, returns the "
+"value modulo $2^{64}$."
 
-#: ../../math.md:60
+#: ../../math.md:59
 msgid "$0 \\le n \\lt 2^{32}$"
 msgstr ""
 
-#: ../../math.md:61
+#: ../../math.md:60
 msgid "$1 \\le m \\lt 2^{32}$"
 msgstr ""
 
-#: ../../math.md:65
+#: ../../math.md:64
 msgid "$O(\\log m)$"
 msgstr ""
 
-#: ../../math.md:67
-msgid "math.internal"
+#: ../../math.md:66
+msgid "internal.math"
 msgstr ""
 
-#: ../../math.md:69
-msgid "math.internal.is_prime"
+#: ../../math.md:68
+msgid ""
+"[ソースコード](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/internal_math.cpp)"
+msgstr ""
+"[Source code](https://github.com/tatyam-prime/acl-cpp-"
+"python/blob/main/src/internal_math.cpp)"
+
+#: ../../math.md:74
+msgid "internal.math.is_prime"
 msgstr ""
 
-#: ../../math.md:76
+#: ../../math.md:81
 msgid "$n$ が素数かどうかを返す。"
 msgstr "Returns whether $n$ is a prime number."
 
-#: ../../math.md:80
+#: ../../math.md:85
 msgid "$0 \\le n < 2^{31}$"
 msgstr ""
 
-#: ../../math.md:82
-msgid "math.internal.primitive_root"
-msgstr ""
-
-#: ../../math.md:89
-msgid "mod $m$ における原始根の $1$ つを返す。"
-msgstr "Returns one of the primitive roots modulo $m$."
-
-#: ../../math.md:93
-msgid "$2 \\le m < 2^{31}$"
+#: ../../math.md:87
+msgid "internal.math.primitive_root"
 msgstr ""
 
 #: ../../math.md:94
+msgid "mod $m$ における原始根の $1$ つを返す。"
+msgstr "Returns one of the primitive roots modulo $m$."
+
+#: ../../math.md:98
+msgid "$2 \\le m < 2^{31}$"
+msgstr ""
+
+#: ../../math.md:99
 msgid "$m$ は素数"
 msgstr "$m$ is a prime number"
 
-#: ../../math.md:96
+#: ../../math.md:101
 msgid "使用例"
 msgstr "Examples"
 
-#: ../../math.md:98
+#: ../../math.md:103
 msgid "AC code of <https://atcoder.jp/contests/practice2/tasks/practice2_c>"
 msgstr ""
-

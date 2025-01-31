@@ -1,5 +1,5 @@
 import acl_cpp.math as m
-import acl_cpp.math.internal as mi
+import acl_cpp.internal.math as mi
 import pytest
 
 def test_math():
