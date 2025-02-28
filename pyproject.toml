@@ -50,7 +50,7 @@ build = [
 ]
 
 [tool.cibuildwheel]
-build = ["cp3{9,13}-*", "pp3{9,10}-*"]
+build = ["cp3{9,13}-*", "pp3{9,11}-*"]
 archs = ["auto64"]
 test-requires = "pytest"
 test-command = "pytest {project}/tests"
