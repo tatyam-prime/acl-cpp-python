@@ -41,7 +41,7 @@ docs = [
   "myst-parser ~= 4.0.0",
 ]
 test = [
-  "cibuildwheel ~= 2.22.0",
+  "cibuildwheel ~= 2.23.3",
   "pytest ~= 8.3.4",
 ]
 build = [
