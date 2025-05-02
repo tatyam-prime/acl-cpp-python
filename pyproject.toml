@@ -1,13 +1,13 @@
 [build-system]
 requires = [
-    "scikit-build-core ~= 0.10.7", 
-    "nanobind ~= 2.2.0"
+    "scikit-build-core ~= 0.11.2", 
+    "nanobind ~= 2.7.0"
 ]
 build-backend = "scikit_build_core.build"
 
 [project]
 name = "acl-cpp-python"
-version = "0.6.1"
+version = "0.6.2"
 readme = "README.md"
 description = "Python bindings for the AtCoder Library"
 requires-python = ">=3.9"
@@ -41,7 +41,7 @@ docs = [
   "myst-parser ~= 4.0.0",
 ]
 test = [
-  "cibuildwheel ~= 2.22.0",
+  "cibuildwheel ~= 2.23.3",
   "pytest ~= 8.3.4",
 ]
 build = [
@@ -50,7 +50,7 @@ build = [
 ]
 
 [tool.cibuildwheel]
-build = ["cp3{9,13}-*", "pp3{9,10}-*"]
+build = ["cp3{9,13}-*", "pp3{9,11}-*"]
 archs = ["auto64"]
 test-requires = "pytest"
 test-command = "pytest {project}/tests"

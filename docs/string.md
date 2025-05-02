@@ -116,6 +116,6 @@ n = len(s)
 sa = suffix_array(s)
 lcp = lcp_array(s, sa)
 
-print(n * (n + 1) // 2 - sum(lcp))
+print(n * (n - 1) // 2 - sum(lcp))
 ```
 
